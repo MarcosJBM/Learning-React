@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Home() {
   return (
     <div>
-      <Link to="/tutorial">Jogo da Velha</Link>
+      <Link to="/game">Jogo da Velha</Link>
     </div>
   );
 }

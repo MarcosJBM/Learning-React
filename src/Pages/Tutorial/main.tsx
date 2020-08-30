@@ -1,15 +1,38 @@
 import React from 'react';
+
 import './style.css';
 
-class Square extends React.Component {
+interface SquareProps {
+  value: number;
+}
+
+//Quadradados
+class Square extends React.Component<SquareProps, { value: string }> {
+  constructor(props: SquareProps) {
+    super(props);
+    this.state = {
+      value: '',
+    };
+  }
+
   render() {
-    return <button className="square">{/* TODO */}</button>;
+    return (
+      <button
+        className="square"
+        onClick={() => {
+          this.setState({ value: 'X' });
+        }}
+      >
+        {this.state.value}
+      </button>
+    );
   }
 }
 
+//Tabuleiro
 class Board extends React.Component {
   renderSquare(i: number) {
-    return <Square />;
+    return <Square value={i} />;
   }
 
   render() {
@@ -38,6 +61,7 @@ class Board extends React.Component {
   }
 }
 
+//Jogo
 class Game extends React.Component {
   render() {
     return (
@@ -46,8 +70,8 @@ class Game extends React.Component {
           <Board />
         </div>
         <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
+          <div>{}</div>
+          <ol>{}</ol>
         </div>
       </div>
     );
