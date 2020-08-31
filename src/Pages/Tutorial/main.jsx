@@ -2,41 +2,37 @@ import React from 'react';
 
 import './style.css';
 
-interface SquareProps {
-  value: number;
-}
-
 //Quadradados
-class Square extends React.Component<SquareProps, { value: string }> {
-  constructor(props: SquareProps) {
-    super(props);
-    this.state = {
-      value: '',
-    };
-  }
-
-  render() {
-    return (
-      <button
-        className="square"
-        onClick={() => {
-          this.setState({ value: 'X' });
-        }}
-      >
-        {this.state.value}
-      </button>
-    );
-  }
+function Square(props) {
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 }
 
 //Tabuleiro
 class Board extends React.Component {
-  renderSquare(i: number) {
-    return <Square value={i} />;
+  constructor(props) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+      xIsNext: true,
+    };
+  }
+
+  handleClick(i) {
+    const squares = this.state.squares.slice();
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({ squares: squares, xIsNext: !this.state.xIsNext });
+  }
+
+  renderSquare(i) {
+    return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />;
   }
 
   render() {
-    const status = 'Next player: X';
+    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
 
     return (
       <div>
