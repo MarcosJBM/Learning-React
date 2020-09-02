@@ -1,10 +1,18 @@
 import React from 'react';
 
 import './style.css';
-import { within } from '@testing-library/react';
 
-//Quadradados
-function Square(props) {
+interface SquareProps {
+  onClick: any;
+  value: number;
+}
+
+interface BoardProps {
+  squares: any[];
+  xIsNext: boolean;
+}
+
+function Square(props: SquareProps) {
   return (
     <button className="square" onClick={props.onClick}>
       {props.value}
@@ -12,9 +20,8 @@ function Square(props) {
   );
 }
 
-//Tabuleiro
-class Board extends React.Component {
-  constructor(props) {
+class Board extends React.Component<any, BoardProps> {
+  constructor(props: BoardProps) {
     super(props);
     this.state = {
       squares: Array(9).fill(null),
@@ -22,7 +29,7 @@ class Board extends React.Component {
     };
   }
 
-  handleClick(i) {
+  handleClick(i: number) {
     const squares = this.state.squares.slice();
     if (calculateWinner(squares) || squares[i]) {
       return;
@@ -31,8 +38,13 @@ class Board extends React.Component {
     this.setState({ squares: squares, xIsNext: !this.state.xIsNext });
   }
 
-  renderSquare(i) {
-    return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />;
+  renderSquare(i: number) {
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    );
   }
 
   render() {
@@ -84,7 +96,7 @@ class Game extends React.Component {
   }
 }
 
-function calculateWinner(squares) {
+function calculateWinner(squares: number[]) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
