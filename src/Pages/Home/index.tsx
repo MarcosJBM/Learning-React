@@ -5,6 +5,8 @@ function Home() {
   return (
     <div>
       <Link to="/game">Jogo da Velha</Link>
+      <br />
+      <Link to="/mainConcepts">Principais Conceitos</Link>
     </div>
   );
 }
