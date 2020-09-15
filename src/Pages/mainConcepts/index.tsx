@@ -93,6 +93,21 @@ function UserInfo(props: AvatarProps) {
   );
 }
 
+//===============================================
+//Estado e Ciclo de Vida
+//===============================================
+
+class Clock extends React.Component {
+  render() {
+    return (
+      <div>
+        <h3>Hello, world!</h3>
+        <h3>It is {}.</h3>
+      </div>
+    );
+  }
+}
+
 const mainConcepts = () => {
   return (
     <div>
@@ -156,6 +171,57 @@ const mainConcepts = () => {
         sua UI for usada várias vezes, é uma boa candidata a ser extraída para
         um componente separado.
       </p>
+      <h2>Props são Somente Leitura</h2>
+      <p>
+        Independente se você declarar um componente como uma função ou uma
+        classe, ele nunca deve modificar seus próprios props
+      </p>
+      <p>
+        As UIs de aplicativos são dinâmicas e mudam com o tempo. Na próxima
+        seção, nós vamos introduzir um novo conceito de “state”. O state permite
+        aos componentes React alterar sua saída ao longo do tempo em resposta a
+        ações do usuário, respostas de rede e quaisquer outras coisas, sem
+        violar essa regra.
+      </p>
+      <h1>Estado e Ciclo de Vida</h1>
+      <p>
+        Esta seção, aprenderemos como tornar o componente Clock verdadeiramente
+        reutilizável e encapsulado. Ele irá configurar seu próprio temporizador
+        e se atualizar a cada segundo.
+      </p>
+      <p>
+        No entanto, falta um requisito crucial: o fato de que o Clock configura
+        um temporizador e atualiza a UI a cada segundo deve ser um detalhe de
+        implementação do Clock.
+      </p>
+      <p>
+        Para implementá-lo, precisamos adicionar um “state” ao componente Clock.
+      </p>
+      <p>
+        O state do componente é similar as props, mas é privado e totalmente
+        controlado pelo componente.
+      </p>
+      <h2>Convertendo uma Função para uma Classe</h2>
+      <p>
+        Você pode converter um componente de função como Clock em uma classe em
+        cinco etapas:
+      </p>
+      <ul>
+        <ol>
+          Criar uma classe ES6, com o mesmo nome, estendendo React.component.
+        </ol>
+        <ol>Adicionar um único método vazio chamado render().</ol>
+        <ol>Mova o corpo da função para o método render().</ol>
+        <ol>Substitua props por this.props no corpo de render().</ol>
+        <ol>Exclua a declaração da função vazia restante.</ol>
+      </ul>
+      <p>
+        O método render será chamado toda vez que uma atualização acontecer, mas
+        enquanto renderizarmos {'<Clock>'} no mesmo nó DOM, apenas uma única
+        instância da classe Clock será usada. Isso nos permite usar recursos
+        adicionais, como o estado local e os métodos de ciclo de vida.
+      </p>
+      <h2>Adicionando Estado Local a uma Classe</h2>
     </div>
   );
 };
