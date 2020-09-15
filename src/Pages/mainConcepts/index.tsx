@@ -270,6 +270,17 @@ const mainConcepts = () => {
       </p>
       <p>Resultado:</p>
       <Clock />
+      <h2>Usando o State Corretamente</h2>
+      <p>Existem três coisas que você deve saber sobre setState().</p>
+      <span>Errado</span>
+      <p>this.state.comment = 'Hello';</p>
+      <p>Em vez disso, use setState():</p>
+      <span>Correto</span>
+      <p>{"this.setState({comment: 'Hello'});"}</p>
+      <p>
+        O único lugar onde você pode atribuir this.state é o{' '}
+        <strong>construtor</strong> .
+      </p>
     </div>
   );
 };
