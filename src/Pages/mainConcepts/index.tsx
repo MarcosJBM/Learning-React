@@ -1,6 +1,6 @@
-import React, { SyntheticEvent } from 'react';
+import React, { SyntheticEvent } from "react";
 
-import './style.css';
+import "./style.css";
 
 //===============================================
 //Introduzindo JSX
@@ -12,16 +12,16 @@ interface UserProps {
 }
 
 //Incorporando Expressões em JSX
-const name = 'Marcos Botene';
+const name = "Marcos Botene";
 const element = <h3>{name}</h3>;
 
 function formatName(user: UserProps) {
-  return user.firstName + ' ' + user.lastName;
+  return user.firstName + " " + user.lastName;
 }
 
 const user = {
-  firstName: 'Daniel',
-  lastName: 'Araldi',
+  firstName: "Daniel",
+  lastName: "Araldi",
 };
 
 const returnUser = <h3>{formatName(user)}</h3>;
@@ -143,7 +143,7 @@ class Clock extends React.Component<{}, ClockProps> {
 function ActionLink() {
   function handleClick(e: SyntheticEvent) {
     e.preventDefault();
-    console.log('O botão foi clicado!');
+    console.log("O botão foi clicado!");
   }
 
   return (
@@ -176,7 +176,7 @@ class Toggle extends React.Component<{}, ToggleProps> {
   render() {
     return (
       <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
+        {this.state.isToggleOn ? "ON" : "OFF"}
       </button>
     );
   }
@@ -184,7 +184,7 @@ class Toggle extends React.Component<{}, ToggleProps> {
 
 class LoggingButton extends React.Component {
   handleClick = () => {
-    console.log('This is', this);
+    console.log("This is", this);
   };
 
   render() {
@@ -198,6 +198,18 @@ class LoggingButton extends React.Component {
 
 interface Props {
   isLoggedIn: boolean;
+}
+
+interface MailProps {
+  unreadMessages: string[];
+}
+
+interface WarningBannerProps {
+  warn: boolean;
+}
+
+interface PageProps {
+  showWarning: boolean;
 }
 
 function UserGreeting() {
@@ -245,16 +257,68 @@ class LoginControl extends React.Component<{}, Props> {
 
   render() {
     const isLoggedIn = this.state.isLoggedIn;
-    let button;
-    if (isLoggedIn) {
-      button = <LogoutButton onClick={this.handleLogoutClick} />;
-    } else {
-      button = <LoginButton onClick={this.handleLoginClick} />;
-    }
     return (
       <div>
-        <Greeting isLoggedIn={isLoggedIn} />
-        {button}
+        {isLoggedIn ? (
+          <LogoutButton onClick={this.handleLogoutClick} />
+        ) : (
+          <LoginButton onClick={this.handleLoginClick} />
+        )}
+      </div>
+    );
+  }
+}
+
+function MailBox(props: MailProps) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    <div>
+      <h3>Hello!</h3>
+      {unreadMessages.length > 0 && (
+        <h3>You have {unreadMessages.length} unread messages</h3>
+      )}
+    </div>
+  );
+}
+
+const messages = [
+  "React",
+  "React Native",
+  "NodeJS",
+  "JavaScript",
+  "TypeScript",
+];
+
+function WarningBanner(props: WarningBannerProps) {
+  if (!props.warn) {
+    return null;
+  }
+
+  return <div>Warning!</div>;
+}
+
+class Page extends React.Component<{}, PageProps> {
+  constructor(props: PageProps) {
+    super(props);
+    this.state = {
+      showWarning: true,
+    };
+    this.handleToggleClick = this.handleToggleClick.bind(this);
+  }
+
+  handleToggleClick() {
+    this.setState((state) => ({
+      showWarning: !state.showWarning,
+    }));
+  }
+
+  render() {
+    return (
+      <div>
+        <WarningBanner warn={this.state.showWarning} />
+        <button onClick={this.handleToggleClick}>
+          {this.state.showWarning ? "Hide" : "Show"}
+        </button>
       </div>
     );
   }
@@ -400,7 +464,7 @@ const mainConcepts = () => {
       <span>Correto</span>
       <p>{"this.setState({comment: 'Hello'});"}</p>
       <p>
-        O único lugar onde você pode atribuir this.state é o{' '}
+        O único lugar onde você pode atribuir this.state é o{" "}
         <strong>construtor</strong> .
       </p>
       <h1>Manipulando eventos</h1>
@@ -419,7 +483,7 @@ const mainConcepts = () => {
       <p>Em HTML:</p>
       <p>{'<button onclick="activateLasers()">Ativar lasers</button>'}</p>
       <p>Em React:</p>
-      <p>{'<button onClick={activateLasers}>Ativar lasers</button>'}</p>
+      <p>{"<button onClick={activateLasers}>Ativar lasers</button>"}</p>
       <p>
         Outra diferença é que você não pode retornar false para evitar o
         comportamento padrão no React. Você deve chamar preventDefault
@@ -441,7 +505,7 @@ const mainConcepts = () => {
       <p>
         Este não é um comportamento específico do React. É uma parte de como
         funcionam as funções em JavaScript. Geralmente, se você referir a um
-        método sem () depois dele, como onClick={'this.handleClick'}, você deve
+        método sem () depois dele, como onClick={"this.handleClick"}, você deve
         fazer o bind manual deste método.
       </p>
       <p>
@@ -483,19 +547,44 @@ const mainConcepts = () => {
         LoginControl.
       </p>
       <p>
-        O componente irá renderizar o {'<LoginButton />'} ou{' '}
-        {'<LogoutButton />'}
+        O componente irá renderizar o {"<LoginButton />"} ou{" "}
+        {"<LogoutButton />"}
         dependendo do estado atual. Ele tambem irá renderizar {
-          '<Greeting />'
-        }{' '}
+          "<Greeting />"
+        }{" "}
         do exemplo anterior:
       </p>
+      <LoginControl />
       <p>
         Declarar uma variável e usar uma declaração condicional if é uma ótima
         maneira de renderizar um componente, mas às vezes você pode querer usar
         uma sintaxe mais curta. Existem algumas maneiras para utilizar condições
         inline em JSX, explicadas abaixo.
       </p>
+      <h2>If inline com o Operador Lógico {"&&"}</h2>
+      <p>
+        Você pode incorporar expressão em JSX encapsulando em chaves. Isto
+        inclui o operador lógico {"&&"} de JavaScript. Isto pode ser conveniente
+        para incluir um elemento condicionalmente:
+      </p>
+      <MailBox unreadMessages={messages} />
+      <h2>If-Else inline com Operador Condicional</h2>
+      <p>
+        Outro método para renderizar elementos inline é utilizar o operador
+        condicional em JavaScript condição ? true : false.
+      </p>
+      <h2>Evitando que um Componente seja Renderizado</h2>
+      <p>
+        Em casos raros você pode desejar que um componente se esconda ainda que
+        ele tenha sido renderizado por outro componente. Para fazer isso,
+        retorne null ao invés do resultado renderizado.
+      </p>
+      <p>
+        No exemplo abaixo, o {"<WarningBanner />"} é renderizado dependendo do
+        valor da prop chamada warn. Se o valor da prop é false, o componente não
+        é renderizado:
+      </p>
+      <Page />
     </div>
   );
 };
