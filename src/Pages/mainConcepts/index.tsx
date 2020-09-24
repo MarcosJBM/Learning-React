@@ -1,6 +1,7 @@
 import React, { SyntheticEvent } from "react";
 
 import "./style.css";
+import { string } from "prop-types";
 
 //===============================================
 //Introduzindo JSX
@@ -21,7 +22,7 @@ function formatName(user: UserProps) {
 
 const user = {
   firstName: "Daniel",
-  lastName: "Araldi",
+  lastName: "Araldi"
 };
 
 const returnUser = <h3>{formatName(user)}</h3>;
@@ -108,7 +109,7 @@ class Clock extends React.Component<{}, ClockProps> {
     this.state = {
       date: new Date(),
       timerID: 0,
-      tick: () => new Date(),
+      tick: () => new Date()
     };
   }
 
@@ -122,7 +123,7 @@ class Clock extends React.Component<{}, ClockProps> {
 
   tick() {
     this.setState({
-      date: new Date(),
+      date: new Date()
     });
   }
 
@@ -161,15 +162,15 @@ class Toggle extends React.Component<{}, ToggleProps> {
   constructor(props: ToggleProps) {
     super(props);
     this.state = {
-      isToggleOn: true,
+      isToggleOn: true
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState((state) => ({
-      isToggleOn: !state.isToggleOn,
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
     }));
   }
 
@@ -243,7 +244,7 @@ class LoginControl extends React.Component<{}, Props> {
     this.handleLoginClick = this.handleLoginClick.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: false
     };
   }
 
@@ -286,7 +287,7 @@ const messages = [
   "React Native",
   "NodeJS",
   "JavaScript",
-  "TypeScript",
+  "TypeScript"
 ];
 
 function WarningBanner(props: WarningBannerProps) {
@@ -301,14 +302,14 @@ class Page extends React.Component<{}, PageProps> {
   constructor(props: PageProps) {
     super(props);
     this.state = {
-      showWarning: true,
+      showWarning: true
     };
     this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
   handleToggleClick() {
-    this.setState((state) => ({
-      showWarning: !state.showWarning,
+    this.setState(state => ({
+      showWarning: !state.showWarning
     }));
   }
 
@@ -322,6 +323,28 @@ class Page extends React.Component<{}, PageProps> {
       </div>
     );
   }
+}
+
+//===============================================
+//Listas e Chaves
+//===============================================
+
+interface NumberListProps {
+  numbers: number[];
+}
+
+const numbers = [1, 2, 3, 4, 5, 6];
+const doubled = numbers.map(numbers => numbers * 2);
+console.log(doubled);
+
+const listItemsArray = numbers.map(number => <li>{number}</li>);
+
+function NumberList(props: NumberListProps) {
+  const numbers = props.numbers;
+  const listItems = numbers.map(number => (
+    <li key={number.toString()}>{number}</li>
+  ));
+  return <ul>{listItems}</ul>;
 }
 
 const mainConcepts = () => {
@@ -585,6 +608,52 @@ const mainConcepts = () => {
         é renderizado:
       </p>
       <Page />
+      <h1>Listas e Chaves</h1>
+      <p>
+        Dado o código abaixo, nós usamos a função map() para receber um array de
+        números e dobrar o valor de cada um deles. Atribuímos o novo array
+        retornado pela função map() para a variável doubled e imprime no
+        console:
+      </p>
+      <h2>Renderizando Múltiplos Componentes</h2>
+      <p>
+        Você pode criar coleções de elementos e adicioná-los no JSX usando
+        chaves {}.
+      </p>
+      <p>
+        Abaixo, iteramos pelo array numbers usando a função map() do JavaScript.
+        Retornamos um elemento {"<li>"} para cada item. Finalmente, atribuímos o
+        array de elementos resultante para listItems:
+      </p>
+      <ul>{listItemsArray}</ul>
+      <h2>Componente de Lista Básico</h2>
+      <p>Geralmente você irá renderizar listas dentro de um componente.</p>
+      <p>
+        Podemos refatorar o exemplo anterior em um componente que aceita um
+        array de números e retorna uma lista de elementos.
+      </p>
+      <NumberList numbers={numbers} />
+      <p>
+        Ao executar esse código, você receberá um aviso que uma chave deve ser
+        definida para os itens da lista. key é um atributo string especial que
+        você precisa definir ao criar listas de elementos. Iremos analisar os
+        motivos pelos quais isso é importante na próxima seção.
+      </p>
+      <p>
+        Vamos atribuir uma key aos itens da nossa lista dentro de numbers.map()
+        e resolver o valor da chave que está em falta.
+      </p>
+      <h2>Keys</h2>
+      <p>
+        As Keys ajudam o React a identificar quais itens sofreram alterações,
+        foram adicionados ou removidos. As Keys devem ser atribuídas aos
+        elementos dentro do array para dar uma identidade estável aos elementos:
+      </p>
+      <p>
+        A melhor forma de escolher uma chave é usar uma string que identifica
+        unicamente um item da lista dentre os demais. Na maioria das vezes você
+        usaria IDs de seus dados como chave:
+      </p>
     </div>
   );
 };
