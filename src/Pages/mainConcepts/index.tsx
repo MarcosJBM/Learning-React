@@ -354,6 +354,47 @@ function NumberList(props: NumberListProps) {
   );
 }
 
+//===============================================
+//Formulários
+//===============================================
+
+interface NameFormProps {
+  value: string;
+}
+
+class NameForm extends React.Component<{}, NameFormProps> {
+  constructor(props: NameFormProps) {
+    super(props);
+    this.state = { value: "" };
+  }
+
+  handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    this.setState({
+      value: event.target.value
+    });
+  }
+
+  handleSubmit(event: SyntheticEvent) {
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onClick={this.handleSubmit}>
+        <label htmlFor="nome">Nome:</label>
+        <input
+          type="text"
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
+        <button type="submit" value="salvar">
+          Salvar
+        </button>
+      </form>
+    );
+  }
+}
+
 const mainConcepts = () => {
   return (
     <div>
@@ -687,6 +728,27 @@ const mainConcepts = () => {
         o corpo da função map() tiver muitos níveis, poderá ser um bom momento
         para extrair um componente.
       </p>
+      <h1>Formulários</h1>
+      <p>
+        Os elementos de formulário HTML funcionam de maneira um pouco diferente
+        de outros elementos DOM no React, porque os elementos de formulário
+        mantêm naturalmente algum estado interno.
+      </p>
+      <h2>Componentes Controlados (Controlled Components)</h2>
+      <p>
+        Em HTML, elementos de formulário como {"<input>"}, {"<textarea>"} e
+        {" <select>"} normalmente mantêm seu próprio estado e o atualiza baseado
+        na entrada do usuário. Em React, o estado mutável é normalmente mantido
+        na propriedade state dos componentes e atualizado apenas com setState().
+      </p>
+      <p>
+        Podemos combinar os dois fazendo o estado React ser a “única fonte da
+        verdade”. Assim, o componente React que renderiza um formulário também
+        controla o que acontece nesse formulário nas entradas subsequentes do
+        usuário. Um input cujo o valor é controlado pelo React dessa maneira é
+        chamado de “componente controlado” (controlled component).
+      </p>
+      <NameForm />
     </div>
   );
 };
