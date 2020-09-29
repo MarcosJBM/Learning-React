@@ -1,7 +1,7 @@
-import React, { SyntheticEvent } from "react";
+import React, { SyntheticEvent } from 'react';
 
-import "./style.css";
-import { number } from "prop-types";
+import './style.css';
+import { number } from 'prop-types';
 
 //===============================================
 //Introduzindo JSX
@@ -13,16 +13,16 @@ interface UserProps {
 }
 
 //Incorporando Expressões em JSX
-const name = "Marcos Botene";
+const name = 'Marcos Botene';
 const element = <h3>{name}</h3>;
 
 function formatName(user: UserProps) {
-  return user.firstName + " " + user.lastName;
+  return user.firstName + ' ' + user.lastName;
 }
 
 const user = {
-  firstName: "Daniel",
-  lastName: "Araldi"
+  firstName: 'Daniel',
+  lastName: 'Araldi',
 };
 
 const returnUser = <h3>{formatName(user)}</h3>;
@@ -109,7 +109,7 @@ class Clock extends React.Component<{}, ClockProps> {
     this.state = {
       date: new Date(),
       timerID: 0,
-      tick: () => new Date()
+      tick: () => new Date(),
     };
   }
 
@@ -123,7 +123,7 @@ class Clock extends React.Component<{}, ClockProps> {
 
   tick() {
     this.setState({
-      date: new Date()
+      date: new Date(),
     });
   }
 
@@ -144,7 +144,7 @@ class Clock extends React.Component<{}, ClockProps> {
 function ActionLink() {
   function handleClick(e: SyntheticEvent) {
     e.preventDefault();
-    console.log("O botão foi clicado!");
+    console.log('O botão foi clicado!');
   }
 
   return (
@@ -162,22 +162,22 @@ class Toggle extends React.Component<{}, ToggleProps> {
   constructor(props: ToggleProps) {
     super(props);
     this.state = {
-      isToggleOn: true
+      isToggleOn: true,
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
+    this.setState((state) => ({
+      isToggleOn: !state.isToggleOn,
     }));
   }
 
   render() {
     return (
       <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? "ON" : "OFF"}
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
       </button>
     );
   }
@@ -185,7 +185,7 @@ class Toggle extends React.Component<{}, ToggleProps> {
 
 class LoggingButton extends React.Component {
   handleClick = () => {
-    console.log("This is", this);
+    console.log('This is', this);
   };
 
   render() {
@@ -244,7 +244,7 @@ class LoginControl extends React.Component<{}, Props> {
     this.handleLoginClick = this.handleLoginClick.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
     this.state = {
-      isLoggedIn: false
+      isLoggedIn: false,
     };
   }
 
@@ -283,11 +283,11 @@ function MailBox(props: MailProps) {
 }
 
 const messages = [
-  "React",
-  "React Native",
-  "NodeJS",
-  "JavaScript",
-  "TypeScript"
+  'React',
+  'React Native',
+  'NodeJS',
+  'JavaScript',
+  'TypeScript',
 ];
 
 function WarningBanner(props: WarningBannerProps) {
@@ -302,14 +302,14 @@ class Page extends React.Component<{}, PageProps> {
   constructor(props: PageProps) {
     super(props);
     this.state = {
-      showWarning: true
+      showWarning: true,
     };
     this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
   handleToggleClick() {
-    this.setState(state => ({
-      showWarning: !state.showWarning
+    this.setState((state) => ({
+      showWarning: !state.showWarning,
     }));
   }
 
@@ -318,7 +318,7 @@ class Page extends React.Component<{}, PageProps> {
       <div>
         <WarningBanner warn={this.state.showWarning} />
         <button onClick={this.handleToggleClick}>
-          {this.state.showWarning ? "Hide" : "Show"}
+          {this.state.showWarning ? 'Hide' : 'Show'}
         </button>
       </div>
     );
@@ -334,10 +334,10 @@ interface NumberListProps {
 }
 
 const numbers = [1, 2, 3, 4, 5, 6];
-const doubled = numbers.map(numbers => numbers * 2);
+const doubled = numbers.map((numbers) => numbers * 2);
 console.log(doubled);
 
-const listItemsArray = numbers.map(number => <li>{number}</li>);
+const listItemsArray = numbers.map((number) => <li>{number}</li>);
 
 function ListItem(props: { value: number }) {
   return <li>{props.value}</li>;
@@ -347,7 +347,7 @@ function NumberList(props: NumberListProps) {
   const numbers = props.numbers;
   return (
     <ul>
-      {numbers.map(number => (
+      {numbers.map((number) => (
         <ListItem key={number.toString()} value={number} />
       ))}
     </ul>
@@ -366,22 +366,27 @@ interface EssayFormProps {
   value: string;
 }
 
+interface FlavorFormProps {
+  value: string;
+}
+
 class NameForm extends React.Component<{}, NameFormProps> {
   constructor(props: NameFormProps) {
     super(props);
-    this.state = { value: "" };
+    this.state = { value: '' };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
-      value: event.target.value
+      value: event.target.value,
     });
   }
 
   handleSubmit(event: SyntheticEvent) {
-    alert("Um nome foi enviado" + this.state.value);
+    alert('Um nome foi enviado' + this.state.value);
     event.preventDefault();
   }
 
@@ -407,8 +412,9 @@ class EssayForm extends React.Component<{}, EssayFormProps> {
     super(props);
     this.state = {
       value:
-        "Por favor, escreva uma dissertação sobre o seu elemento DOM favorito."
+        'Por favor, escreva uma dissertação sobre o seu elemento DOM favorito.',
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -427,6 +433,45 @@ class EssayForm extends React.Component<{}, EssayFormProps> {
         <label>
           Dissertação:
           <textarea value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Enviar" />
+      </form>
+    );
+  }
+}
+
+class FlavorForm extends React.Component<{}, FlavorFormProps> {
+  constructor(props: FlavorFormProps) {
+    super(props);
+    this.state = { value: 'coco' };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    this.setState({ value: event.target.value });
+  }
+  handleSubmit(event: SyntheticEvent) {
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label htmlFor="favoriteFlavor">
+          Escolha seu sabor favorito:
+          <select
+            name=""
+            id=""
+            value={this.state.value}
+            onChange={this.handleChange}
+          >
+            <option value="laranja">Laranja</option>
+            <option value="limao">Limão</option>
+            <option value="coco">Coco</option>
+            <option value="manga">Manga</option>
+          </select>
         </label>
         <input type="submit" value="Enviar" />
       </form>
@@ -574,7 +619,7 @@ const mainConcepts = () => {
       <span>Correto</span>
       <p>{"this.setState({comment: 'Hello'});"}</p>
       <p>
-        O único lugar onde você pode atribuir this.state é o{" "}
+        O único lugar onde você pode atribuir this.state é o{' '}
         <strong>construtor</strong> .
       </p>
       <h1>Manipulando eventos</h1>
@@ -593,7 +638,7 @@ const mainConcepts = () => {
       <p>Em HTML:</p>
       <p>{'<button onclick="activateLasers()">Ativar lasers</button>'}</p>
       <p>Em React:</p>
-      <p>{"<button onClick={activateLasers}>Ativar lasers</button>"}</p>
+      <p>{'<button onClick={activateLasers}>Ativar lasers</button>'}</p>
       <p>
         Outra diferença é que você não pode retornar false para evitar o
         comportamento padrão no React. Você deve chamar preventDefault
@@ -615,7 +660,7 @@ const mainConcepts = () => {
       <p>
         Este não é um comportamento específico do React. É uma parte de como
         funcionam as funções em JavaScript. Geralmente, se você referir a um
-        método sem () depois dele, como onClick={"this.handleClick"}, você deve
+        método sem () depois dele, como onClick={'this.handleClick'}, você deve
         fazer o bind manual deste método.
       </p>
       <p>
@@ -657,11 +702,11 @@ const mainConcepts = () => {
         LoginControl.
       </p>
       <p>
-        O componente irá renderizar o {"<LoginButton />"} ou{" "}
-        {"<LogoutButton />"}
+        O componente irá renderizar o {'<LoginButton />'} ou{' '}
+        {'<LogoutButton />'}
         dependendo do estado atual. Ele tambem irá renderizar {
-          "<Greeting />"
-        }{" "}
+          '<Greeting />'
+        }{' '}
         do exemplo anterior:
       </p>
       <LoginControl />
@@ -671,10 +716,10 @@ const mainConcepts = () => {
         uma sintaxe mais curta. Existem algumas maneiras para utilizar condições
         inline em JSX, explicadas abaixo.
       </p>
-      <h2>If inline com o Operador Lógico {"&&"}</h2>
+      <h2>If inline com o Operador Lógico {'&&'}</h2>
       <p>
         Você pode incorporar expressão em JSX encapsulando em chaves. Isto
-        inclui o operador lógico {"&&"} de JavaScript. Isto pode ser conveniente
+        inclui o operador lógico {'&&'} de JavaScript. Isto pode ser conveniente
         para incluir um elemento condicionalmente:
       </p>
       <MailBox unreadMessages={messages} />
@@ -690,7 +735,7 @@ const mainConcepts = () => {
         retorne null ao invés do resultado renderizado.
       </p>
       <p>
-        No exemplo abaixo, o {"<WarningBanner />"} é renderizado dependendo do
+        No exemplo abaixo, o {'<WarningBanner />'} é renderizado dependendo do
         valor da prop chamada warn. Se o valor da prop é false, o componente não
         é renderizado:
       </p>
@@ -709,7 +754,7 @@ const mainConcepts = () => {
       </p>
       <p>
         Abaixo, iteramos pelo array numbers usando a função map() do JavaScript.
-        Retornamos um elemento {"<li>"} para cada item. Finalmente, atribuímos o
+        Retornamos um elemento {'<li>'} para cada item. Finalmente, atribuímos o
         array de elementos resultante para listItems:
       </p>
       <ul>{listItemsArray}</ul>
@@ -748,8 +793,8 @@ const mainConcepts = () => {
       </p>
       <p>
         Por exemplo, se você extrai um componente ListItem, você deve deixar a
-        chave nos elementos {"<ListItem />"} ao invés de deixar no elemento{" "}
-        {"<li>"} dentro de ListItem.
+        chave nos elementos {'<ListItem />'} ao invés de deixar no elemento{' '}
+        {'<li>'} dentro de ListItem.
       </p>
       <p>
         Por via de regra, os elementos dentro de uma função map() devem
@@ -775,8 +820,8 @@ const mainConcepts = () => {
       </p>
       <h2>Componentes Controlados (Controlled Components)</h2>
       <p>
-        Em HTML, elementos de formulário como {"<input>"}, {"<textarea>"} e
-        {" <select>"} normalmente mantêm seu próprio estado e o atualiza baseado
+        Em HTML, elementos de formulário como {'<input>'}, {'<textarea>'} e
+        {' <select>'} normalmente mantêm seu próprio estado e o atualiza baseado
         na entrada do usuário. Em React, o estado mutável é normalmente mantido
         na propriedade state dos componentes e atualizado apenas com setState().
       </p>
@@ -804,11 +849,36 @@ const mainConcepts = () => {
       </p>
       <h2>Tag textarea</h2>
       <p>
-        Em React, em vez disso, o {"<textarea>"} usa um atributo value. Desta
-        forma, um formulário usando um {"<textarea>"} pode ser escrito de forma
+        Em React, em vez disso, o {'<textarea>'} usa um atributo value. Desta
+        forma, um formulário usando um {'<textarea>'} pode ser escrito de forma
         muito semelhante a um formulário que usa um input de linha única:
       </p>
       <EssayForm />
+      <h2>Tag select</h2>
+      <p>
+        Em HTML,{' <select>'} cria uma lista suspensa (drop-down). Por exemplo,
+        esse HTML cria uma lista suspensa de sabores:
+      </p>
+      <p>
+        Note que a opção “coco” é selecionada por padrão, por causa do atributo
+        selected. Em React, em vez de usar este atributo selected, usa-se um
+        atributo value na raiz da tag select. Isso é mais conveniente em um
+        componente controlado, porque você só precisa atualizá-lo em um só
+        lugar.
+      </p>
+      <FlavorForm />
+      <p>
+        No geral, isso faz com que as tags {'<input type="text">'},{' '}
+        {'<textarea>'} e {'<select>'} funcionem de forma muito semelhante -
+        todos eles aceitam um atributo value que você pode usar para implementar
+        um componente controlado.
+      </p>
+      <p>
+        <strong>
+          Você pode passar um array para o atributo value, permitindo que você
+          selecione várias opções em uma tag select:
+        </strong>
+      </p>
     </div>
   );
 };
