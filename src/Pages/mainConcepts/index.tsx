@@ -362,10 +362,16 @@ interface NameFormProps {
   value: string;
 }
 
+interface EssayFormProps {
+  value: string;
+}
+
 class NameForm extends React.Component<{}, NameFormProps> {
   constructor(props: NameFormProps) {
     super(props);
     this.state = { value: "" };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -375,6 +381,7 @@ class NameForm extends React.Component<{}, NameFormProps> {
   }
 
   handleSubmit(event: SyntheticEvent) {
+    alert("Um nome foi enviado" + this.state.value);
     event.preventDefault();
   }
 
@@ -390,6 +397,38 @@ class NameForm extends React.Component<{}, NameFormProps> {
         <button type="submit" value="salvar">
           Salvar
         </button>
+      </form>
+    );
+  }
+}
+
+class EssayForm extends React.Component<{}, EssayFormProps> {
+  constructor(props: EssayFormProps) {
+    super(props);
+    this.state = {
+      value:
+        "Por favor, escreva uma dissertação sobre o seu elemento DOM favorito."
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event: SyntheticEvent) {
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Dissertação:
+          <textarea value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Enviar" />
       </form>
     );
   }
@@ -749,6 +788,27 @@ const mainConcepts = () => {
         chamado de “componente controlado” (controlled component).
       </p>
       <NameForm />
+      <p>
+        Como o atributo value é definido no nosso {'<input type="text">'}, o
+        valor exibido sempre será o mesmo de this.state.value, fazendo com que o
+        estado do React seja a fonte da verdade. Como o handleChange é executado
+        a cada tecla pressionada para atualizar o estado do React, o valor
+        exibido será atualizado conforme o usuário digita.
+      </p>
+      <p>
+        Com um componente controlado, o valor da entrada é sempre direcionado
+        pelo estado React. Embora isso signifique que você precisa digitar um
+        pouco mais de código, agora também pode passar o valor para outros
+        elementos da interface do usuário ou redefini-lo de outros manipuladores
+        de eventos.
+      </p>
+      <h2>Tag textarea</h2>
+      <p>
+        Em React, em vez disso, o {"<textarea>"} usa um atributo value. Desta
+        forma, um formulário usando um {"<textarea>"} pode ser escrito de forma
+        muito semelhante a um formulário que usa um input de linha única:
+      </p>
+      <EssayForm />
     </div>
   );
 };
