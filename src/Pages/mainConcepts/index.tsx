@@ -879,6 +879,16 @@ const mainConcepts = () => {
           selecione várias opções em uma tag select:
         </strong>
       </p>
+      <h2>Tag de entrada de arquivo</h2>
+      <p>
+        Em HTML, o {'<input type="file">'} permite ao usuário escolher um ou
+        mais arquivos de seu dispositivo para serem enviados para um servidor ou
+        manipulados por JavaScript através da File API.
+      </p>
+      <p>
+        Como seu valor é de somente leitura, ele é um componente não controlado
+        do React.
+      </p>
     </div>
   );
 };
