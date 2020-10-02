@@ -540,6 +540,24 @@ class Calculator extends React.Component<{}, CalculatorProps> {
   }
 }
 
+function toCelsius(fahrenheit: number) {
+  return ((fahrenheit - 32) * 5) / 9;
+}
+
+function toFahrenheit(celsius: number) {
+  return (celsius * 9) / 5 + 32;
+}
+
+function tryConvert(temperature: string, convert: any) {
+  const input = parseFloat(temperature);
+  if (Number.isNaN(input)) {
+    return '';
+  }
+  const output = convert(input);
+  const rounded = Math.round(output * 1000) / 1000;
+  return rounded.toString();
+}
+
 const mainConcepts = () => {
   return (
     <div>
@@ -995,6 +1013,25 @@ const mainConcepts = () => {
         Também não podemos renderizar o BoilingVerdict a partir do Calculator,
         porque esse não conhece a temperatura atual já que ela está escondida
         dentro do TemperatureInput.
+      </p>
+      <h2>Codificando Funções de Conversão</h2>
+      <p>
+        Primeiro, vamos criar duas funções para converter de Celsius para
+        Fahrenheit e vice-versa:
+      </p>
+      <p>
+        Essas duas funções convertem números. Vamos criar outra função que
+        recebe uma string temperature e uma função de conversão como argumentos
+        e retorna uma string. Vamos usá-la para calcular o valor de um input com
+        base no outro input.
+      </p>
+      <p>
+        Retorna uma string vazia quando temperature for inválido e mantém o
+        retorno arredondado até a terceira casa decimal.
+      </p>
+      <p>
+        Por exemplo, tryConvert('abc', toCelsius) retona uma string vazia e
+        tryConvert('10.22', toFahrenheit) retorna '50.396'.
       </p>
     </div>
   );
