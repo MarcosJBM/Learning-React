@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 function Home() {
   return (
     <div>
-      <Link to="/game">Jogo da Velha</Link>
+      <Link to="/Game">Jogo da Velha</Link>
       <br />
-      <Link to="/mainConcepts">Principais Conceitos</Link>
+      <Link to="/MainConcepts">Principais Conceitos</Link>
     </div>
   );
 }
