@@ -1,18 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Game from './Pages/Tutorial';
-import Home from './Pages/Home';
-import MainConcepts from './Pages/MainConcepts';
+import Game from '../src/Pages/Tutorial';
+import Home from '../src/Pages/Home';
+import MainConcepts from '../src/Pages/mainConcepts';
 
-import IntroducingJSX from './Pages/MainConcepts/IntroducingJSX';
-import ComponentsAndProps from './Pages/MainConcepts/ComponentsAndProps';
-import StateAndLifeCycle from './Pages/MainConcepts/StateAndLifeCycle';
-import HandlingEvents from './Pages/MainConcepts/HandlingEvents';
-import ConditionalRendering from './Pages/MainConcepts/ConditionalRendering';
-import ListsAndKeys from './Pages/MainConcepts/ListsAnsKeys';
-import Forms from './Pages/MainConcepts/Forms';
-import RaisingTheState from './Pages/MainConcepts/RaisingTheState';
+import IntroducingJSX from '../src/Pages/mainConcepts/IntroducingJSX';
+import ComponentsAndProps from '../src/Pages/mainConcepts/ComponentsAndProps';
+import StateAndLifeCycle from '../src/Pages/mainConcepts/StateAndLifeCycle';
+import HandlingEvents from '../src/Pages/mainConcepts/HandlingEvents';
+import ConditionalRendering from '../src/Pages/mainConcepts/ConditionalRendering';
+import ListsAndKeys from '../src/Pages/mainConcepts/ListsAnsKeys';
+import Forms from '../src/Pages/mainConcepts/Forms';
+import RaisingTheState from '../src/Pages/mainConcepts/RaisingTheState';
 
 export default function Routes() {
   return (
