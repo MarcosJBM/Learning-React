@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function MainConcepts() {
   return (
@@ -19,6 +19,8 @@ export default function MainConcepts() {
       <Link to="/Forms">Formulários</Link>
       <br />
       <Link to="/RaisingTheState">Elevando o State</Link>
+      <br />
+      <Link to="/CompositionVsInheritance">Composição VS Herança</Link>
     </div>
   );
 }
