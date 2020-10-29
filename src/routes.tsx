@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Game from "../src/Pages/Tutorial";
 import Home from "../src/Pages/Home";
 import MainConcepts from "../src/Pages/mainConcepts";
+import AdvancedGuides from "../src/Pages/AdvancedGuides";
 
 import IntroducingJSX from "../src/Pages/mainConcepts/IntroducingJSX";
 import ComponentsAndProps from "../src/Pages/mainConcepts/ComponentsAndProps";
@@ -14,6 +15,8 @@ import ListsAndKeys from "../src/Pages/mainConcepts/ListsAnsKeys";
 import Forms from "../src/Pages/mainConcepts/Forms";
 import RaisingTheState from "../src/Pages/mainConcepts/RaisingTheState";
 import CompositionVsInheritance from "../src/Pages/mainConcepts/CompositionVsInheritance";
+
+import Accessibility from "./Pages/AdvancedGuides/Accessibility";
 
 export default function Routes() {
   return (
@@ -33,6 +36,8 @@ export default function Routes() {
         path="/CompositionVsInheritance"
         component={CompositionVsInheritance}
       />
+      <Route path="/AdvancedGuides" component={AdvancedGuides} />
+      <Route path="/Accessibility" component={Accessibility} />
     </BrowserRouter>
   );
 }

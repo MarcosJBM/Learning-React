@@ -1,8 +1,4 @@
-import React, { SyntheticEvent } from 'react';
-
-//===============================================
-//Formulários
-//===============================================
+import React, { SyntheticEvent } from "react";
 
 interface NameFormProps {
   value: string;
@@ -19,7 +15,7 @@ interface FlavorFormProps {
 class NameForm extends React.Component<{}, NameFormProps> {
   constructor(props: NameFormProps) {
     super(props);
-    this.state = { value: '' };
+    this.state = { value: "" };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,7 +28,7 @@ class NameForm extends React.Component<{}, NameFormProps> {
   }
 
   handleSubmit(event: SyntheticEvent) {
-    alert('Um nome foi enviado' + this.state.value);
+    alert("Um nome foi enviado" + this.state.value);
     event.preventDefault();
   }
 
@@ -58,7 +54,7 @@ class EssayForm extends React.Component<{}, EssayFormProps> {
     super(props);
     this.state = {
       value:
-        'Por favor, escreva uma dissertação sobre o seu elemento DOM favorito.',
+        "Por favor, escreva uma dissertação sobre o seu elemento DOM favorito.",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -89,7 +85,7 @@ class EssayForm extends React.Component<{}, EssayFormProps> {
 class FlavorForm extends React.Component<{}, FlavorFormProps> {
   constructor(props: FlavorFormProps) {
     super(props);
-    this.state = { value: 'coco' };
+    this.state = { value: "coco" };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -136,8 +132,8 @@ export default function Forms() {
       </p>
       <h2>Componentes Controlados (Controlled Components)</h2>
       <p>
-        Em HTML, elementos de formulário como {'<input>'}, {'<textarea>'} e
-        {' <select>'} normalmente mantêm seu próprio estado e o atualiza baseado
+        Em HTML, elementos de formulário como {"<input>"}, {"<textarea>"} e
+        {" <select>"} normalmente mantêm seu próprio estado e o atualiza baseado
         na entrada do usuário. Em React, o estado mutável é normalmente mantido
         na propriedade state dos componentes e atualizado apenas com setState().
       </p>
@@ -165,14 +161,14 @@ export default function Forms() {
       </p>
       <h2>Tag textarea</h2>
       <p>
-        Em React, em vez disso, o {'<textarea>'} usa um atributo value. Desta
-        forma, um formulário usando um {'<textarea>'} pode ser escrito de forma
+        Em React, em vez disso, o {"<textarea>"} usa um atributo value. Desta
+        forma, um formulário usando um {"<textarea>"} pode ser escrito de forma
         muito semelhante a um formulário que usa um input de linha única:
       </p>
       <EssayForm />
       <h2>Tag select</h2>
       <p>
-        Em HTML,{' <select>'} cria uma lista suspensa (drop-down). Por exemplo,
+        Em HTML,{" <select>"} cria uma lista suspensa (drop-down). Por exemplo,
         esse HTML cria uma lista suspensa de sabores:
       </p>
       <p>
@@ -184,8 +180,8 @@ export default function Forms() {
       </p>
       <FlavorForm />
       <p>
-        No geral, isso faz com que as tags {'<input type="text">'},{' '}
-        {'<textarea>'} e {'<select>'} funcionem de forma muito semelhante -
+        No geral, isso faz com que as tags {'<input type="text">'},{" "}
+        {"<textarea>"} e {"<select>"} funcionem de forma muito semelhante -
         todos eles aceitam um atributo value que você pode usar para implementar
         um componente controlado.
       </p>
