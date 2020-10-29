@@ -16,8 +16,6 @@ import Forms from "../src/Pages/mainConcepts/Forms";
 import RaisingTheState from "../src/Pages/mainConcepts/RaisingTheState";
 import CompositionVsInheritance from "../src/Pages/mainConcepts/CompositionVsInheritance";
 
-import Accessibility from "./Pages/AdvancedGuides/Accessibility";
-
 export default function Routes() {
   return (
     <BrowserRouter>
@@ -37,7 +35,6 @@ export default function Routes() {
         component={CompositionVsInheritance}
       />
       <Route path="/AdvancedGuides" component={AdvancedGuides} />
-      <Route path="/Accessibility" component={Accessibility} />
     </BrowserRouter>
   );
 }
