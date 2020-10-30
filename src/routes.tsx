@@ -1,22 +1,22 @@
-import React from "react";
+import React, { lazy } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
-import Game from "../src/Pages/Tutorial";
-import Home from "../src/Pages/Home";
-import MainConcepts from "../src/Pages/mainConcepts";
-import AdvancedGuides from "../src/Pages/AdvancedGuides";
+const Game = lazy(() => import("../src/Pages/Tutorial"));
+const Home = lazy(() => import("../src/Pages/Home"));
+const MainConcepts = lazy(() => import("../src/Pages/mainConcepts"));
+const AdvancedGuides = lazy(() => import("../src/Pages/AdvancedGuides"));
 
-import IntroducingJSX from "../src/Pages/mainConcepts/IntroducingJSX";
-import ComponentsAndProps from "../src/Pages/mainConcepts/ComponentsAndProps";
-import StateAndLifeCycle from "../src/Pages/mainConcepts/StateAndLifeCycle";
-import HandlingEvents from "../src/Pages/mainConcepts/HandlingEvents";
-import ConditionalRendering from "../src/Pages/mainConcepts/ConditionalRendering";
-import ListsAndKeys from "../src/Pages/mainConcepts/ListsAnsKeys";
-import Forms from "../src/Pages/mainConcepts/Forms";
-import RaisingTheState from "../src/Pages/mainConcepts/RaisingTheState";
-import CompositionVsInheritance from "../src/Pages/mainConcepts/CompositionVsInheritance";
+const IntroducingJSX = lazy(() => import("../src/Pages/mainConcepts/IntroducingJSX"));
+const ComponentsAndProps = lazy(() => import("../src/Pages/mainConcepts/ComponentsAndProps"));
+const StateAndLifeCycle = lazy(() => import("../src/Pages/mainConcepts/StateAndLifeCycle"));
+const HandlingEvents = lazy(() => import("../src/Pages/mainConcepts/HandlingEvents"));
+const ConditionalRendering = lazy(() => import("../src/Pages/mainConcepts/ConditionalRendering"));
+const ListsAndKeys = lazy(() => import("../src/Pages/mainConcepts/ListsAnsKeys"));
+const Forms = lazy(() => import("../src/Pages/mainConcepts/Forms"));
+const RaisingTheState = lazy(() => import("../src/Pages/mainConcepts/RaisingTheState"));
+const CompositionVsInheritance = lazy(() => import("../src/Pages/mainConcepts/CompositionVsInheritance"));
 
-import CodeSplitting from "../src/Pages/AdvancedGuides/CodeSplitting";
+const CodeSplitting = lazy(() => import("../src/Pages/AdvancedGuides/CodeSplitting"));
 
 export default function Routes() {
   return (
@@ -32,10 +32,7 @@ export default function Routes() {
       <Route path="/ListsAndKeys" component={ListsAndKeys} />
       <Route path="/Forms" component={Forms} />
       <Route path="/RaisingTheState" component={RaisingTheState} />
-      <Route
-        path="/CompositionVsInheritance"
-        component={CompositionVsInheritance}
-      />
+      <Route path="/CompositionVsInheritance" component={CompositionVsInheritance} />
       <Route path="/AdvancedGuides" component={AdvancedGuides} />
       <Route path="/CodeSplitting" component={CodeSplitting} />
     </BrowserRouter>
