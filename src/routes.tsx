@@ -17,6 +17,7 @@ import RaisingTheState from "../src/Pages/mainConcepts/RaisingTheState";
 import CompositionVsInheritance from "../src/Pages/mainConcepts/CompositionVsInheritance";
 
 import CodeSplitting from "../src/Pages/AdvancedGuides/CodeSplitting";
+import Context from "../src/Pages/AdvancedGuides/Context";
 
 export default function Routes() {
   return (
@@ -38,6 +39,7 @@ export default function Routes() {
       />
       <Route path='/AdvancedGuides' component={AdvancedGuides} />
       <Route path='/CodeSplitting' component={CodeSplitting} />
+      <Route path='/Context' component={Context} />
     </BrowserRouter>
   );
 }
