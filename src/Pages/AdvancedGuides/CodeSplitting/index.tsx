@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import MyErrorBoundary from "./myErrorBoundary";
 
-import("./math").then((math) => {
+import("./math").then(math => {
   console.log(math.Add(2, 2));
 });
 
