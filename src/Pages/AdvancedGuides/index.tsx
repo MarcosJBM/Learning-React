@@ -7,6 +7,8 @@ export default function AdvancedGuides() {
       <Link to='/CodeSplitting'>Dividindo o Código</Link>
       <br />
       <Link to='/Context'>Contexto</Link>
+      <br />
+      <Link to='/ErrorBoundaries'>Error Boundaries</Link>
     </div>
   );
 }

@@ -1,14 +1,11 @@
 import React from "react";
-import { ThemeContext, Theme, useTheme } from "./ThemeContext";
+import { ThemeContext, Theme, useTheme } from "./themeContext";
 
 function App() {
   const [theme, setTheme] = React.useState(Theme.Light);
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div>
-        <header></header>
-        <MyPage />
-      </div>
+      <MyPage />
     </ThemeContext.Provider>
   );
 }

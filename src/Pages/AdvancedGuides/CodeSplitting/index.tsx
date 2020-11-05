@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import MyErrorBoundary from "./myErrorBoundary";
+import { ErrorBoundary } from "../ErrorBoundaries";
 
 import("./math").then(math => {
   console.log(math.Add(2, 2));
@@ -11,14 +11,14 @@ const AnotherComponent = React.lazy(() => import("./anotherComponent"));
 
 function MyComponent() {
   return (
-    <MyErrorBoundary>
+    <ErrorBoundary>
       <Suspense fallback={<div>Loading...</div>}>
         <section>
           <OtherComponent />
           <AnotherComponent />
         </section>
       </Suspense>
-    </MyErrorBoundary>
+    </ErrorBoundary>
   );
 }
 

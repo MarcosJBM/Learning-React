@@ -18,6 +18,7 @@ import CompositionVsInheritance from "../src/Pages/mainConcepts/CompositionVsInh
 
 import CodeSplitting from "../src/Pages/AdvancedGuides/CodeSplitting";
 import Context from "../src/Pages/AdvancedGuides/Context";
+import ErrorBoundaries from "../src/Pages/AdvancedGuides/ErrorBoundaries";
 
 export default function Routes() {
   return (
@@ -40,6 +41,7 @@ export default function Routes() {
       <Route path='/AdvancedGuides' component={AdvancedGuides} />
       <Route path='/CodeSplitting' component={CodeSplitting} />
       <Route path='/Context' component={Context} />
+      <Route path='/ErrorBoundaries' component={ErrorBoundaries} />
     </BrowserRouter>
   );
 }
