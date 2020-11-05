@@ -9,6 +9,8 @@ export default function AdvancedGuides() {
       <Link to='/Context'>Contexto</Link>
       <br />
       <Link to='/ErrorBoundaries'>Error Boundaries</Link>
+      <br />
+      <Link to='/Fragments'>Fragmentos</Link>
     </div>
   );
 }

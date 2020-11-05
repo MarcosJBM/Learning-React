@@ -1,24 +1,25 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
-import Game from "../src/Pages/Tutorial";
-import Home from "../src/Pages/Home";
-import MainConcepts from "../src/Pages/mainConcepts";
-import AdvancedGuides from "../src/Pages/AdvancedGuides";
+import Game from "./Pages/Tutorial";
+import Home from "./Pages/Home";
+import MainConcepts from "./Pages/mainConcepts";
+import AdvancedGuides from "./Pages/AdvancedGuides";
 
-import IntroducingJSX from "../src/Pages/mainConcepts/IntroducingJSX";
-import ComponentsAndProps from "../src/Pages/mainConcepts/ComponentsAndProps";
-import StateAndLifeCycle from "../src/Pages/mainConcepts/StateAndLifeCycle";
-import HandlingEvents from "../src/Pages/mainConcepts/HandlingEvents";
-import ConditionalRendering from "../src/Pages/mainConcepts/ConditionalRendering";
-import ListsAndKeys from "../src/Pages/mainConcepts/ListsAnsKeys";
-import Forms from "../src/Pages/mainConcepts/Forms";
-import RaisingTheState from "../src/Pages/mainConcepts/RaisingTheState";
-import CompositionVsInheritance from "../src/Pages/mainConcepts/CompositionVsInheritance";
+import IntroducingJSX from "./Pages/mainConcepts/IntroducingJSX";
+import ComponentsAndProps from "./Pages/mainConcepts/ComponentsAndProps";
+import StateAndLifeCycle from "./Pages/mainConcepts/StateAndLifeCycle";
+import HandlingEvents from "./Pages/mainConcepts/HandlingEvents";
+import ConditionalRendering from "./Pages/mainConcepts/ConditionalRendering";
+import ListsAndKeys from "./Pages/mainConcepts/ListsAnsKeys";
+import Forms from "./Pages/mainConcepts/Forms";
+import RaisingTheState from "./Pages/mainConcepts/RaisingTheState";
+import CompositionVsInheritance from "./Pages/mainConcepts/CompositionVsInheritance";
 
-import CodeSplitting from "../src/Pages/AdvancedGuides/CodeSplitting";
-import Context from "../src/Pages/AdvancedGuides/Context";
-import ErrorBoundaries from "../src/Pages/AdvancedGuides/ErrorBoundaries";
+import CodeSplitting from "./Pages/AdvancedGuides/CodeSplitting";
+import Context from "./Pages/AdvancedGuides/Context";
+import ErrorBoundaries from "./Pages/AdvancedGuides/ErrorBoundaries";
+import Fragments from "./Pages/AdvancedGuides/Fragments";
 
 export default function Routes() {
   return (
@@ -42,6 +43,7 @@ export default function Routes() {
       <Route path='/CodeSplitting' component={CodeSplitting} />
       <Route path='/Context' component={Context} />
       <Route path='/ErrorBoundaries' component={ErrorBoundaries} />
+      <Route path='/Fragments' component={Fragments} />
     </BrowserRouter>
   );
 }
