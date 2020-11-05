@@ -11,6 +11,8 @@ export default function AdvancedGuides() {
       <Link to='/ErrorBoundaries'>Error Boundaries</Link>
       <br />
       <Link to='/Fragments'>Fragmentos</Link>
+      <br />
+      <Link to='/JSXInDepth'>JSX In Depth</Link>
     </div>
   );
 }
