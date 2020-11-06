@@ -21,6 +21,7 @@ import Context from "./Pages/AdvancedGuides/Context";
 import ErrorBoundaries from "./Pages/AdvancedGuides/ErrorBoundaries";
 import Fragments from "./Pages/AdvancedGuides/Fragments";
 import JSXInDepth from "./Pages/AdvancedGuides/JSXinDepth";
+import OptimizingPerformance from "./Pages/AdvancedGuides/OptimizingPerformance";
 
 export default function Routes() {
   return (
@@ -46,6 +47,7 @@ export default function Routes() {
       <Route path='/ErrorBoundaries' component={ErrorBoundaries} />
       <Route path='/Fragments' component={Fragments} />
       <Route path='/JSXInDepth' component={JSXInDepth} />
+      <Route path='/OptimizingPerformance' component={OptimizingPerformance} />
     </BrowserRouter>
   );
 }
