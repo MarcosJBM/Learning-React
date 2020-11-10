@@ -22,34 +22,32 @@ import ErrorBoundaries from "./Pages/AdvancedGuides/ErrorBoundaries";
 import Fragments from "./Pages/AdvancedGuides/Fragments";
 import JSXInDepth from "./Pages/AdvancedGuides/JSXinDepth";
 import OptimizingPerformance from "./Pages/AdvancedGuides/OptimizingPerformance";
-import Portals from "./Pages/AdvancedGuides/Portals";
 
 export default function Routes() {
   return (
     <BrowserRouter>
-      <Route exact path="/" component={Home} />
-      <Route path="/Game" component={Game} />
-      <Route path="/MainConcepts" component={MainConcepts} />
-      <Route path="/IntroducingJSX" component={IntroducingJSX} />
-      <Route path="/ComponentsAndProps" component={ComponentsAndProps} />
-      <Route path="/StateAndLifeCycle" component={StateAndLifeCycle} />
-      <Route path="/HandlingEvents" component={HandlingEvents} />
-      <Route path="/ConditionalRendering" component={ConditionalRendering} />
-      <Route path="/ListsAndKeys" component={ListsAndKeys} />
-      <Route path="/Forms" component={Forms} />
-      <Route path="/RaisingTheState" component={RaisingTheState} />
+      <Route exact path='/' component={Home} />
+      <Route path='/Game' component={Game} />
+      <Route path='/MainConcepts' component={MainConcepts} />
+      <Route path='/IntroducingJSX' component={IntroducingJSX} />
+      <Route path='/ComponentsAndProps' component={ComponentsAndProps} />
+      <Route path='/StateAndLifeCycle' component={StateAndLifeCycle} />
+      <Route path='/HandlingEvents' component={HandlingEvents} />
+      <Route path='/ConditionalRendering' component={ConditionalRendering} />
+      <Route path='/ListsAndKeys' component={ListsAndKeys} />
+      <Route path='/Forms' component={Forms} />
+      <Route path='/RaisingTheState' component={RaisingTheState} />
       <Route
-        path="/CompositionVsInheritance"
+        path='/CompositionVsInheritance'
         component={CompositionVsInheritance}
       />
-      <Route path="/AdvancedGuides" component={AdvancedGuides} />
-      <Route path="/CodeSplitting" component={CodeSplitting} />
-      <Route path="/Context" component={Context} />
-      <Route path="/ErrorBoundaries" component={ErrorBoundaries} />
-      <Route path="/Fragments" component={Fragments} />
-      <Route path="/JSXInDepth" component={JSXInDepth} />
-      <Route path="/OptimizingPerformance" component={OptimizingPerformance} />
-      <Route path="/Portals" component={Portals} />
+      <Route path='/AdvancedGuides' component={AdvancedGuides} />
+      <Route path='/CodeSplitting' component={CodeSplitting} />
+      <Route path='/Context' component={Context} />
+      <Route path='/ErrorBoundaries' component={ErrorBoundaries} />
+      <Route path='/Fragments' component={Fragments} />
+      <Route path='/JSXInDepth' component={JSXInDepth} />
+      <Route path='/OptimizingPerformance' component={OptimizingPerformance} />
     </BrowserRouter>
   );
 }
