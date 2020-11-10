@@ -22,6 +22,7 @@ import ErrorBoundaries from "./Pages/AdvancedGuides/ErrorBoundaries";
 import Fragments from "./Pages/AdvancedGuides/Fragments";
 import JSXInDepth from "./Pages/AdvancedGuides/JSXinDepth";
 import OptimizingPerformance from "./Pages/AdvancedGuides/OptimizingPerformance";
+import Portals from "./Pages/AdvancedGuides/Portals";
 
 export default function Routes() {
   return (
@@ -48,6 +49,7 @@ export default function Routes() {
       <Route path='/Fragments' component={Fragments} />
       <Route path='/JSXInDepth' component={JSXInDepth} />
       <Route path='/OptimizingPerformance' component={OptimizingPerformance} />
+      <Route path='/Portals' component={Portals} />
     </BrowserRouter>
   );
 }

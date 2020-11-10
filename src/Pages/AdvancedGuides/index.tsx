@@ -15,6 +15,8 @@ export default function AdvancedGuides() {
       <Link to='/JSXInDepth'>JSX In Depth</Link>
       <br />
       <Link to='/OptimizingPerformance'>Otimizando o Desempenho</Link>
+      <br />
+      <Link to='/Portals'>Portals</Link>
     </div>
   );
 }
