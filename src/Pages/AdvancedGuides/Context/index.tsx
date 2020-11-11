@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeContext, Theme, useTheme } from "./themeContext";
+import { ThemeContext, Theme, useTheme } from "./ThemeContext";
 
 function App() {
   const [theme, setTheme] = React.useState(Theme.Light);
