@@ -1,5 +1,22 @@
 import React from "react";
-import { ThemeContext, Theme, useTheme } from "./ThemeContext";
+
+import { createContext, useContext } from "react";
+
+enum Theme {
+  Dark = "Dark",
+  Light = "Light",
+}
+
+type ThemeContextType = {
+  theme: Theme;
+  setTheme: (Theme: Theme) => void;
+};
+
+const ThemeContext = createContext<ThemeContextType>({
+  theme: Theme.Dark,
+  setTheme: theme => console.warn("no theme provider"),
+});
+export const useTheme = () => useContext(ThemeContext);
 
 function App() {
   const [theme, setTheme] = React.useState(Theme.Light);
