@@ -4,12 +4,12 @@ import { MouseState, CatProps, MouseProps } from "./type";
 
 class Cat extends Component<CatProps> {
   render() {
-    const cat =
+    const seta =
       "https://i.pinimg.com/originals/95/3d/6c/953d6c0a8026ae79e81a689692428c6f.png";
     const { mouse } = this.props;
     return (
       <img
-        src={cat}
+        src={seta}
         style={{
           position: "absolute",
           left: mouse.x,
