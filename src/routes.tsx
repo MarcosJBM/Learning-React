@@ -5,6 +5,7 @@ import Game from "./Pages/Tutorial";
 import Home from "./Pages/Home";
 import MainConcepts from "./Pages/mainConcepts";
 import AdvancedGuides from "./Pages/AdvancedGuides";
+import Hooks from "./Pages/Hooks";
 
 import IntroducingJSX from "./Pages/mainConcepts/IntroducingJSX";
 import ComponentsAndProps from "./Pages/mainConcepts/ComponentsAndProps";
@@ -26,11 +27,14 @@ import Portals from "./Pages/AdvancedGuides/Portals";
 import RenderProps from "./Pages/AdvancedGuides/RenderProps";
 import RefsAndDom from "./Pages/AdvancedGuides/RefsAndDom";
 
+import HooksSummary from "./Pages/Hooks/HooksSummary";
+
 export default function Routes() {
   return (
     <BrowserRouter>
       <Route exact path='/' component={Home} />
       <Route path='/Game' component={Game} />
+
       <Route path='/MainConcepts' component={MainConcepts} />
       <Route path='/IntroducingJSX' component={IntroducingJSX} />
       <Route path='/ComponentsAndProps' component={ComponentsAndProps} />
@@ -44,6 +48,7 @@ export default function Routes() {
         path='/CompositionVsInheritance'
         component={CompositionVsInheritance}
       />
+
       <Route path='/AdvancedGuides' component={AdvancedGuides} />
       <Route path='/CodeSplitting' component={CodeSplitting} />
       <Route path='/Context' component={Context} />
@@ -54,6 +59,9 @@ export default function Routes() {
       <Route path='/Portals' component={Portals} />
       <Route path='/RenderProps' component={RenderProps} />
       <Route path='/RefsAndDom' component={RefsAndDom} />
+
+      <Route path='/Hooks' component={Hooks} />
+      <Route path='/HooksSummary' component={HooksSummary} />
     </BrowserRouter>
   );
 }
