@@ -27,8 +27,6 @@ import Portals from "./Pages/AdvancedGuides/Portals";
 import RenderProps from "./Pages/AdvancedGuides/RenderProps";
 import RefsAndDom from "./Pages/AdvancedGuides/RefsAndDom";
 
-import HooksSummary from "./Pages/Hooks/HooksSummary";
-
 export default function Routes() {
   return (
     <BrowserRouter>
@@ -61,7 +59,6 @@ export default function Routes() {
       <Route path='/RefsAndDom' component={RefsAndDom} />
 
       <Route path='/Hooks' component={Hooks} />
-      <Route path='/HooksSummary' component={HooksSummary} />
     </BrowserRouter>
   );
 }
