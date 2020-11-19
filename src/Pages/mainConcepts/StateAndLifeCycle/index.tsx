@@ -1,44 +1,6 @@
-import React from 'react';
+import React from "react";
 
-interface ClockProps {
-  date: Date;
-  timerID: number;
-  tick: () => Date;
-}
-
-class Clock extends React.Component<{}, ClockProps> {
-  constructor(props: ClockProps) {
-    super(props);
-    this.state = {
-      date: new Date(),
-      timerID: 0,
-      tick: () => new Date(),
-    };
-  }
-
-  componentDidMount(this: ClockProps) {
-    this.timerID = window.setInterval(() => this.tick(), 1000);
-  }
-
-  componentWillUnmount(this: ClockProps) {
-    clearInterval(this.timerID);
-  }
-
-  tick() {
-    this.setState({
-      date: new Date(),
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <h3>Hello, world!</h3>
-        <h3>It is {this.state.date.toLocaleTimeString()}.</h3>
-      </div>
-    );
-  }
-}
+import { Clock } from "./components";
 
 export default function StateAndLifeCycle() {
   return (
@@ -108,7 +70,7 @@ export default function StateAndLifeCycle() {
       <span>Correto</span>
       <p>{"this.setState({comment: 'Hello'});"}</p>
       <p>
-        O único lugar onde você pode atribuir this.state é o{' '}
+        O único lugar onde você pode atribuir this.state é o
         <strong>construtor</strong> .
       </p>
     </div>

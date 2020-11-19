@@ -1,134 +1,16 @@
-import React from 'react';
+import React from "react";
 
-interface Props {
-  isLoggedIn: boolean;
-}
-
-interface MailProps {
-  unreadMessages: string[];
-}
-
-interface WarningBannerProps {
-  warn: boolean;
-}
-
-interface PageProps {
-  showWarning: boolean;
-}
-
-function UserGreeting() {
-  return <h3>Welcome Back!</h3>;
-}
-
-function GuestGreeting() {
-  return <h3>Please sign up.</h3>;
-}
-
-function LoginButton(props: { onClick: () => void }) {
-  return <button onClick={props.onClick}>Login</button>;
-}
-
-function LogoutButton(props: { onClick: () => void }) {
-  return <button onClick={props.onClick}>Logout</button>;
-}
-
-function Greeting(props: Props) {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
-    return <UserGreeting />;
-  } else {
-    return <GuestGreeting />;
-  }
-}
-
-class LoginControl extends React.Component<{}, Props> {
-  constructor(props: Props) {
-    super(props);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = {
-      isLoggedIn: false,
-    };
-  }
-
-  handleLoginClick() {
-    this.setState({ isLoggedIn: true });
-  }
-
-  handleLogoutClick() {
-    this.setState({ isLoggedIn: false });
-  }
-
-  render() {
-    const isLoggedIn = this.state.isLoggedIn;
-    return (
-      <div>
-        {isLoggedIn ? (
-          <LogoutButton onClick={this.handleLogoutClick} />
-        ) : (
-          <LoginButton onClick={this.handleLoginClick} />
-        )}
-      </div>
-    );
-  }
-}
-
-function MailBox(props: MailProps) {
-  const unreadMessages = props.unreadMessages;
-  return (
-    <div>
-      <h3>Hello!</h3>
-      {unreadMessages.length > 0 && (
-        <h3>You have {unreadMessages.length} unread messages</h3>
-      )}
-    </div>
-  );
-}
-
-const messages = [
-  'React',
-  'React Native',
-  'NodeJS',
-  'JavaScript',
-  'TypeScript',
-];
-
-function WarningBanner(props: WarningBannerProps) {
-  if (!props.warn) {
-    return null;
-  }
-
-  return <div>Warning!</div>;
-}
-
-class Page extends React.Component<{}, PageProps> {
-  constructor(props: PageProps) {
-    super(props);
-    this.state = {
-      showWarning: true,
-    };
-    this.handleToggleClick = this.handleToggleClick.bind(this);
-  }
-
-  handleToggleClick() {
-    this.setState((state) => ({
-      showWarning: !state.showWarning,
-    }));
-  }
-
-  render() {
-    return (
-      <div>
-        <WarningBanner warn={this.state.showWarning} />
-        <button onClick={this.handleToggleClick}>
-          {this.state.showWarning ? 'Hide' : 'Show'}
-        </button>
-      </div>
-    );
-  }
-}
+import { Greeting, LoginControl, MailBox, Page } from "./components";
 
 export default function ConditionalRendering() {
+  const messages = [
+    "React",
+    "React Native",
+    "NodeJS",
+    "JavaScript",
+    "TypeScript",
+  ];
+
   return (
     <div>
       <h1>Renderização condicional</h1>
@@ -151,7 +33,9 @@ export default function ConditionalRendering() {
         Este exemplo renderiza um “greeting” diferente dependendo do valor da
         prop isLoggedIn.
       </p>
+      <br />
       <Greeting isLoggedIn={false} />
+      <br />
       <h2>Variáveis de Elementos</h2>
       <p>
         Você pode usar variáveis para guardar elementos. Isto pode te ajudar a
@@ -163,27 +47,29 @@ export default function ConditionalRendering() {
         LoginControl.
       </p>
       <p>
-        O componente irá renderizar o {'<LoginButton />'} ou{' '}
-        {'<LogoutButton />'}
-        dependendo do estado atual. Ele tambem irá renderizar {
-          '<Greeting />'
-        }{' '}
+        O componente irá renderizar o {"<LoginButton />"} ou
+        {"<LogoutButton />"}
+        dependendo do estado atual. Ele tambem irá renderizar {"<Greeting />"}
         do exemplo anterior:
       </p>
+      <br />
       <LoginControl />
+      <br />
       <p>
         Declarar uma variável e usar uma declaração condicional if é uma ótima
         maneira de renderizar um componente, mas às vezes você pode querer usar
         uma sintaxe mais curta. Existem algumas maneiras para utilizar condições
         inline em JSX, explicadas abaixo.
       </p>
-      <h2>If inline com o Operador Lógico {'&&'}</h2>
+      <h2>If inline com o Operador Lógico {"&&"}</h2>
       <p>
         Você pode incorporar expressão em JSX encapsulando em chaves. Isto
-        inclui o operador lógico {'&&'} de JavaScript. Isto pode ser conveniente
+        inclui o operador lógico {"&&"} de JavaScript. Isto pode ser conveniente
         para incluir um elemento condicionalmente:
       </p>
+      <br />
       <MailBox unreadMessages={messages} />
+      <br />
       <h2>If-Else inline com Operador Condicional</h2>
       <p>
         Outro método para renderizar elementos inline é utilizar o operador
@@ -196,11 +82,13 @@ export default function ConditionalRendering() {
         retorne null ao invés do resultado renderizado.
       </p>
       <p>
-        No exemplo abaixo, o {'<WarningBanner />'} é renderizado dependendo do
+        No exemplo abaixo, o {"<WarningBanner />"} é renderizado dependendo do
         valor da prop chamada warn. Se o valor da prop é false, o componente não
         é renderizado:
       </p>
+      <br />
       <Page />
+      <br />
     </div>
   );
 }

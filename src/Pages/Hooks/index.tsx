@@ -1,21 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    document.title = `Clicks ${count}`;
-  });
-
-  return (
-    <div>
-      <p>
-        Voce clicou <strong>{count}</strong> vezes.
-      </p>
-      <button onClick={() => setCount(count + 1)}>Clique</button>
-    </div>
-  );
-}
+import { Counter } from "./functions";
 
 export default function Hooks() {
   return (
@@ -25,7 +10,12 @@ export default function Hooks() {
         Hooks permitem que você use o state e outros recursos do React sem
         escrever uma classe.
       </p>
-      <h2>📌 State Hook</h2>
+      <h2>
+        <span role='img' aria-label=''>
+          📌
+        </span>
+        State Hook
+      </h2>
       <p>
         useState é um Hook, nós o chamamos dentro de um componente funcional
         para adicionar alguns states locais a ele. React irá preservar este
@@ -49,7 +39,12 @@ export default function Hooks() {
         funcionam dentro de classes — eles permitem que você use React sem
         classes.
       </p>
-      <h2>⚡️ Hook de Efeito</h2>
+      <h2>
+        <span role='img' aria-label=''>
+          ⚡️
+        </span>
+        Hook de Efeito
+      </h2>
       <p>
         Você provavelmente já realizou obtenção de dados (data fetching),
         subscrições (subscriptions) ou mudanças manuais no DOM através de
@@ -70,7 +65,12 @@ export default function Hooks() {
         props e state. Por padrão, React executa os efeitos após cada
         renderização — incluindo a primeira renderização.
       </p>
-      <h2>✌️ Regras dos Hooks</h2>
+      <h2>
+        <span role='img' aria-label=''>
+          ✌️
+        </span>
+        Regras dos Hooks
+      </h2>
       <p>
         Hooks são funções JavaScript, mas eles impões duas regras adicionais:
       </p>

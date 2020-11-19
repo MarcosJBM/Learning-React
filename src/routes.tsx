@@ -3,19 +3,18 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import Game from "./Pages/Tutorial";
 import Home from "./Pages/Home";
-import MainConcepts from "./Pages/mainConcepts";
+import MainConcepts from "./Pages/MainConcepts";
 import AdvancedGuides from "./Pages/AdvancedGuides";
 import Hooks from "./Pages/Hooks";
 
-import IntroducingJSX from "./Pages/mainConcepts/IntroducingJSX";
-import ComponentsAndProps from "./Pages/mainConcepts/ComponentsAndProps";
-import StateAndLifeCycle from "./Pages/mainConcepts/StateAndLifeCycle";
-import HandlingEvents from "./Pages/mainConcepts/HandlingEvents";
-import ConditionalRendering from "./Pages/mainConcepts/ConditionalRendering";
-import ListsAndKeys from "./Pages/mainConcepts/ListsAnsKeys";
-import Forms from "./Pages/mainConcepts/Forms";
-import RaisingTheState from "./Pages/mainConcepts/RaisingTheState";
-import CompositionVsInheritance from "./Pages/mainConcepts/CompositionVsInheritance";
+import ComponentsAndProps from "./Pages/MainConcepts/ComponentsAndProps";
+import StateAndLifeCycle from "./Pages/MainConcepts/StateAndLifeCycle";
+import HandlingEvents from "./Pages/MainConcepts/HandlingEvents";
+import ConditionalRendering from "./Pages/MainConcepts/ConditionalRendering";
+import ListsAndKeys from "./Pages/MainConcepts/ListsAndKeys";
+import Forms from "./Pages/MainConcepts/Forms";
+import RaisingTheState from "./Pages/MainConcepts/RaisingTheState";
+import CompositionVsInheritance from "./Pages/MainConcepts/CompositionVsInheritance";
 
 import CodeSplitting from "./Pages/AdvancedGuides/CodeSplitting";
 import Context from "./Pages/AdvancedGuides/Context";
@@ -34,7 +33,6 @@ export default function Routes() {
       <Route path='/Game' component={Game} />
 
       <Route path='/MainConcepts' component={MainConcepts} />
-      <Route path='/IntroducingJSX' component={IntroducingJSX} />
       <Route path='/ComponentsAndProps' component={ComponentsAndProps} />
       <Route path='/StateAndLifeCycle' component={StateAndLifeCycle} />
       <Route path='/HandlingEvents' component={HandlingEvents} />

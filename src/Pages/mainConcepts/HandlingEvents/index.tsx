@@ -1,56 +1,6 @@
-import React, { SyntheticEvent } from 'react';
+import React from "react";
 
-function ActionLink() {
-  function handleClick(e: SyntheticEvent) {
-    e.preventDefault();
-    console.log('O botão foi clicado!');
-  }
-
-  return (
-    <a href="#" onClick={handleClick}>
-      Clique aqui!
-    </a>
-  );
-}
-
-interface ToggleProps {
-  isToggleOn: boolean;
-}
-
-class Toggle extends React.Component<{}, ToggleProps> {
-  constructor(props: ToggleProps) {
-    super(props);
-    this.state = {
-      isToggleOn: true,
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState((state) => ({
-      isToggleOn: !state.isToggleOn,
-    }));
-  }
-
-  render() {
-    return (
-      <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
-      </button>
-    );
-  }
-}
-
-class LoggingButton extends React.Component {
-  handleClick = () => {
-    console.log('This is', this);
-  };
-
-  render() {
-    return <button onClick={this.handleClick}>Clique Aqui</button>;
-  }
-}
+import { ActionLink, Toggle, LoggingButton } from "./components";
 
 export default function HandlingEvents() {
   return (
@@ -71,7 +21,7 @@ export default function HandlingEvents() {
       <p>Em HTML:</p>
       <p>{'<button onclick="activateLasers()">Ativar lasers</button>'}</p>
       <p>Em React:</p>
-      <p>{'<button onClick={activateLasers}>Ativar lasers</button>'}</p>
+      <p>{"<button onClick={activateLasers}>Ativar lasers</button>"}</p>
       <p>
         Outra diferença é que você não pode retornar false para evitar o
         comportamento padrão no React. Você deve chamar preventDefault
@@ -93,7 +43,7 @@ export default function HandlingEvents() {
       <p>
         Este não é um comportamento específico do React. É uma parte de como
         funcionam as funções em JavaScript. Geralmente, se você referir a um
-        método sem () depois dele, como onClick={'this.handleClick'}, você deve
+        método sem () depois dele, como onClick={"this.handleClick"}, você deve
         fazer o bind manual deste método.
       </p>
       <p>

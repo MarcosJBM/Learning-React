@@ -1,24 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const numbers = [1, 2, 3, 4, 5, 6];
-const doubled = numbers.map((number) => number * 2);
-
-const listItemsArray = doubled.map((number) => <li>{number}</li>);
-
-function ListItem(props: { value: number }) {
-  return <li>{props.value}</li>;
-}
-
-function NumberList(props: { numbers: number[] }) {
-  const numbers = props.numbers;
-  return (
-    <ul>
-      {numbers.map((number) => (
-        <ListItem key={number.toString()} value={number} />
-      ))}
-    </ul>
-  );
-}
+import { listItemsArray, NumberList } from "./components";
 
 export default function ListsAndKeys() {
   return (
@@ -37,7 +19,7 @@ export default function ListsAndKeys() {
       </p>
       <p>
         Abaixo, iteramos pelo array numbers usando a função map() do JavaScript.
-        Retornamos um elemento {'<li>'} para cada item. Finalmente, atribuímos o
+        Retornamos um elemento {"<li>"} para cada item. Finalmente, atribuímos o
         array de elementos resultante para listItems:
       </p>
       <ul>{listItemsArray}</ul>
@@ -47,7 +29,7 @@ export default function ListsAndKeys() {
         Podemos refatorar o exemplo anterior em um componente que aceita um
         array de números e retorna uma lista de elementos.
       </p>
-      <NumberList numbers={numbers} />
+      <NumberList />
       <p>
         Ao executar esse código, você receberá um aviso que uma chave deve ser
         definida para os itens da lista. key é um atributo string especial que
@@ -76,8 +58,8 @@ export default function ListsAndKeys() {
       </p>
       <p>
         Por exemplo, se você extrai um componente ListItem, você deve deixar a
-        chave nos elementos {'<ListItem />'} ao invés de deixar no elemento{' '}
-        {'<li>'} dentro de ListItem.
+        chave nos elementos {"<ListItem />"} ao invés de deixar no elemento{" "}
+        {"<li>"} dentro de ListItem.
       </p>
       <p>
         Por via de regra, os elementos dentro de uma função map() devem
