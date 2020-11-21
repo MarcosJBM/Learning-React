@@ -1,26 +1,6 @@
-import React, { Suspense } from "react";
-import { ErrorBoundary } from "../ErrorBoundaries";
+import React from "react";
 
-import("./math").then(math => {
-  console.log(math.Add(2, 2));
-});
-
-// Funciona apenas com arquivos .tsx
-const OtherComponent = React.lazy(() => import("./otherComponent"));
-const AnotherComponent = React.lazy(() => import("./anotherComponent"));
-
-function MyComponent() {
-  return (
-    <ErrorBoundary>
-      <Suspense fallback={<div>Loading...</div>}>
-        <section>
-          <OtherComponent />
-          <AnotherComponent />
-        </section>
-      </Suspense>
-    </ErrorBoundary>
-  );
-}
+import { MyComponent } from "./components";
 
 export default function CodeSplitting() {
   return (

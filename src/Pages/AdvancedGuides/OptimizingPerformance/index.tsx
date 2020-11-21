@@ -1,37 +1,6 @@
 import React from "react";
 
-interface CounterButtonProps {
-  count: number;
-}
-
-class CounterButton extends React.Component<{}, CounterButtonProps> {
-  constructor(props: CounterButtonProps) {
-    super(props);
-    this.state = {
-      count: 1,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  shouldComponentUpdate(nextState: CounterButtonProps) {
-    if (this.state.count !== nextState.count) {
-      return true;
-    }
-    return false;
-  }
-
-  handleClick() {
-    this.setState(state => ({
-      count: state.count + 1,
-    }));
-  }
-
-  render() {
-    return (
-      <button onClick={this.handleClick}>Abacates: {this.state.count}</button>
-    );
-  }
-}
+import { CounterButton } from "./components";
 
 // class ExamplePureComponent extends React.PureComponent {}
 

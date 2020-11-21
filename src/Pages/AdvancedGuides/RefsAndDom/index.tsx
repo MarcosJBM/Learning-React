@@ -1,64 +1,6 @@
-import React, { Component, createRef } from "react";
+import React from "react";
 
-class CustomTextInput extends Component {
-  private textInput = React.createRef<HTMLInputElement>();
-
-  constructor(props: any) {
-    super(props);
-    this.focusTextInput = this.focusTextInput.bind(this);
-  }
-
-  focusTextInput() {
-    this.textInput.current?.focus();
-  }
-
-  render() {
-    return (
-      <div>
-        <input type='text' ref={this.textInput} />
-        <input
-          type='button'
-          value={"Focus the text input"}
-          onClick={this.focusTextInput}
-        />
-      </div>
-    );
-  }
-}
-
-// Foca automaticamente em um elemento do HTML.
-class AutoFocusTextInput extends Component {
-  private textInput = createRef<CustomTextInput>();
-
-  componentDidMount() {
-    this.textInput.current?.focusTextInput();
-  }
-
-  render() {
-    return <CustomTextInput ref={this.textInput} />;
-  }
-}
-
-const CustomTextInputTwo = () => {
-  const textInput = React.createRef<HTMLInputElement>();
-
-  function handleClick() {
-    if (textInput.current) {
-      textInput.current.focus();
-    }
-  }
-
-  return (
-    <div>
-      <input type='text' ref={textInput} />
-      <input
-        type='button'
-        value={"Focus the text input"}
-        onClick={handleClick}
-      />
-    </div>
-  );
-};
+import { CustomTextInput, AutoFocusTextInput } from "./components";
 
 export default function RefsAndDom() {
   return (

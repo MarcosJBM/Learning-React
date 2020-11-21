@@ -1,42 +1,6 @@
 import React from "react";
 
-import { createContext, useContext } from "react";
-
-enum Theme {
-  Dark = "Dark",
-  Light = "Light",
-}
-
-type ThemeContextType = {
-  theme: Theme;
-  setTheme: (Theme: Theme) => void;
-};
-
-const ThemeContext = createContext<ThemeContextType>({
-  theme: Theme.Dark,
-  setTheme: theme => console.warn("no theme provider"),
-});
-export const useTheme = () => useContext(ThemeContext);
-
-function App() {
-  const [theme, setTheme] = React.useState(Theme.Light);
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      <MyPage />
-    </ThemeContext.Provider>
-  );
-}
-
-const MyPage = () => {
-  const { theme, setTheme } = useTheme();
-  console.log(theme);
-
-  return (
-    <div>
-      <button onClick={() => setTheme(Theme.Dark)}>Mudar Tema</button>
-    </div>
-  );
-};
+import { App } from "./components";
 
 export default function Context() {
   return (

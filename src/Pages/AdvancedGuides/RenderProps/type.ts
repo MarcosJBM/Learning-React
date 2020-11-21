@@ -1,5 +1,3 @@
-import { type } from "os";
-
 export type MouseState = {
   x: number;
   y: number;

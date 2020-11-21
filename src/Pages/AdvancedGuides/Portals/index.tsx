@@ -1,5 +1,6 @@
 import React from "react";
-import { App } from "./portals";
+
+import { App } from "./components";
 
 export default function Portals() {
   return (
