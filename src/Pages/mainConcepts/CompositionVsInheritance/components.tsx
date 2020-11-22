@@ -1,87 +1,45 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 
-import {
-  FancyBorderProps,
-  DialogProps,
-  SignUpDialogProps,
-  SplitPaneProps,
-} from "./type";
+import { DialogProps, SplitPaneProps } from "./type";
 
-const FancyBorder: React.FC<FancyBorderProps> = props => {
+const Dialog: React.FC<DialogProps> = props => {
   return (
-    <div className={`FancyBorder FancyBorder-${props.color}`}>
+    <div className='dialog-box'>
+      <h1 className='dialog-title'>{props.title}</h1>
+      <p className='dialog-message'>{props.message}</p>
       {props.children}
     </div>
   );
 };
 
-const Dialog: React.FC<DialogProps> = props => {
+export const SignUpDialog = () => {
+  const [login, setLogin] = useState("");
+
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    const name = event.target.value;
+    setLogin(name);
+  }
+
+  function handleSignUp() {
+    alert(`Bem Vindo, ${login}`);
+  }
+
   return (
-    <FancyBorder color='blue'>
-      <h1 className='dialog-title'>{props.title}</h1>
-      <p className='dialog-message'>{props.message}</p>
-      {props.children}
-    </FancyBorder>
-  );
-};
-
-export class SignUpDialog extends React.Component<{}, SignUpDialogProps> {
-  constructor(props: SignUpDialogProps) {
-    super(props);
-    this.state = {
-      login: "",
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSignUp = this.handleSignUp.bind(this);
-  }
-
-  handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    this.setState({
-      login: event.target.value,
-    });
-  }
-
-  handleSignUp() {
-    alert(`Bem Vindo, ${this.state.login}!`);
-  }
-
-  render() {
-    return (
+    <div className="sign-up-dialog">
       <Dialog
         title='Programa de Exploração de Marte '
         message='Como gostaria de ser chamado?'
       >
-        <input value={this.state.login} onChange={this.handleChange} />
-        <button onClick={this.handleSignUp}>Cadastrar-se!</button>
+        <input type='text' value={login} onChange={handleChange} />
+        <button onClick={handleSignUp}>Cadastrar-se</button>
       </Dialog>
-    );
-  }
-}
-
-export function WelcomeDialog() {
-  return (
-    <Dialog
-      title='Bem Vindo'
-      message='Obrigado por visitar a nossa espaçonave!'
-    />
-  );
-}
-
-function SplitPane(props: SplitPaneProps) {
-  return (
-    <div>
-      <fieldset>
-        <div>{props.left}</div>
-        <div>{props.right}</div>
-      </fieldset>
     </div>
   );
-}
+};
 
 function Contacts() {
   return (
-    <div>
+    <div className='contacts'>
       <p>Marcos Botene</p>
       <p>Daniel Araldi</p>
       <p>Gustavo Godoi</p>
@@ -91,9 +49,16 @@ function Contacts() {
 }
 
 function Chat() {
+  return <input type='text' />;
+}
+
+function SplitPane(props: SplitPaneProps) {
   return (
-    <div>
-      <input type='text' />
+    <div className='split-pane'>
+      <fieldset>
+        <div className='left'>{props.left}</div>
+        <div className='right'>{props.right}</div>
+      </fieldset>
     </div>
   );
 }
