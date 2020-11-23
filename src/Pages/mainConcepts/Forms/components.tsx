@@ -1,110 +1,76 @@
-import React, { SyntheticEvent } from "react";
+import React, { ChangeEvent, SyntheticEvent, useState } from "react";
 
-export class NameForm extends React.Component<{}, { value: string }> {
-  constructor(props: { value: string }) {
-    super(props);
-    this.state = { value: "" };
+export const NameForm = () => {
+  const [name, setName] = useState("");
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    const inputValue = event.target.value;
+    setName(inputValue);
   }
 
-  handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    this.setState({
-      value: event.target.value,
-    });
-  }
-
-  handleSubmit(event: SyntheticEvent) {
+  function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
-    alert("Um nome foi enviado" + this.state.value);
+    alert(`Nome Enviado: ${name}`);
   }
 
-  render() {
-    return (
-      <form onClick={this.handleSubmit}>
-        <label htmlFor='nome'>Nome:</label>
-        <input
-          type='text'
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-        <button type='submit' value='salvar'>
-          Salvar
-        </button>
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor='name'>Nome:</label>
+      <input type='text' value={name} onChange={handleChange} />
+      <button type='submit'>Enviar</button>
+    </form>
+  );
+};
 
-export class EssayForm extends React.Component<{}, { value: string }> {
-  constructor(props: { value: string }) {
-    super(props);
-    this.state = {
-      value:
-        "Por favor, escreva uma dissertação sobre o seu elemento DOM favorito.",
-    };
+export const EssayForm = () => {
+  const [value, setValue] = useState(
+    "Por favor, escreva uma dissertação sobre o seu elemento DOM favorito"
+  );
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  function handleChange(event: ChangeEvent<HTMLTextAreaElement>) {
+    const textAreaValue = event.target.value;
+    setValue(textAreaValue);
   }
 
-  handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(event: SyntheticEvent) {
+  function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
+    alert("Dissertação Enviada!");
   }
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Dissertação:
-          <textarea value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type='submit' value='Enviar' />
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Dissertação:
+        <textarea value={value} onChange={handleChange} />
+      </label>
+      <button type='submit'>Enviar</button>
+    </form>
+  );
+};
 
-export class FlavorForm extends React.Component<{}, { value: string }> {
-  constructor(props: { value: string }) {
-    super(props);
-    this.state = { value: "coco" };
+export const FlavorForm = () => {
+  const [flavor, setFlavor] = useState("Coco");
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  function handleChange(event: ChangeEvent<HTMLSelectElement>) {
+    const selectValue = event.target.value;
+    setFlavor(selectValue);
   }
 
-  handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    this.setState({ value: event.target.value });
-  }
-  handleSubmit(event: SyntheticEvent) {
+  function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
+    alert(`Sabor Selecionado: ${flavor}`);
   }
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor='favoriteFlavor'>
-          Escolha seu sabor favorito:
-          <select
-            name=''
-            id=''
-            value={this.state.value}
-            onChange={this.handleChange}
-          >
-            <option value='laranja'>Laranja</option>
-            <option value='limao'>Limão</option>
-            <option value='coco'>Coco</option>
-            <option value='manga'>Manga</option>
-          </select>
-        </label>
-        <input type='submit' value='Enviar' />
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor='favoriteFlavor'>Escolha um Sabor:</label>
+      <select value={flavor} onChange={handleChange}>
+        <option value='laranja'>Laranja</option>
+        <option value='limao'>Limão</option>
+        <option value='coco'>Coco</option>
+        <option value='manga'>Manga</option>
+      </select>
+      <button type='submit'>Enviar</button>
+    </form>
+  );
+};
