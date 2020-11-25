@@ -1,30 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-export class CounterButton extends React.Component<{}, { count: number }> {
-  constructor(props: { count: number }) {
-    super(props);
-    this.state = {
-      count: 1,
-    };
-    this.handleClick = this.handleClick.bind(this);
+export const CounterButton = () => {
+  const [counter, setCounter] = useState(0);
+
+  function handleClick() {
+    setCounter(counter + 1);
   }
 
-  shouldComponentUpdate(nextState: { count: number }) {
-    if (this.state.count !== nextState.count) {
-      return true;
-    }
-    return false;
-  }
-
-  handleClick() {
-    this.setState(state => ({
-      count: state.count + 1,
-    }));
-  }
-
-  render() {
-    return (
-      <button onClick={this.handleClick}>Abacates: {this.state.count}</button>
-    );
-  }
-}
+  return <button onClick={handleClick}>Abacates: {counter}</button>;
+};
