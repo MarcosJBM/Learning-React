@@ -8,11 +8,7 @@ export default function AdvancedGuides() {
       <br />
       <Link to='/ErrorBoundaries'>Error Boundaries</Link>
       <br />
-      <Link to='/Fragments'>Fragmentos</Link>
-      <br />
       <Link to='/JSXInDepth'>JSX In Depth</Link>
-      <br />
-      <Link to='/OptimizingPerformance'>Otimizando o Desempenho</Link>
       <br />
       <Link to='/Portals'>Portals</Link>
       <br />

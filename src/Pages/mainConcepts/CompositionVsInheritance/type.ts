@@ -1,9 +1,9 @@
-export interface SplitPaneProps {
+export type SplitPaneProps = {
   left: {};
   right: {};
-}
+};
 
-export interface DialogProps {
+export type DialogProps = {
   title: string;
   message: string;
-}
+};

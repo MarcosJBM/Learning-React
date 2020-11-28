@@ -32,11 +32,7 @@ const Context = lazy(() => import("./Pages/AdvancedGuides/Context"));
 const ErrorBoundaries = lazy(
   () => import("./Pages/AdvancedGuides/ErrorBoundaries")
 );
-const Fragments = lazy(() => import("./Pages/AdvancedGuides/Fragments"));
 const JSXInDepth = lazy(() => import("./Pages/AdvancedGuides/JSXinDepth"));
-const OptimizingPerformance = lazy(
-  () => import("./Pages/AdvancedGuides/OptimizingPerformance")
-);
 const Portals = lazy(() => import("./Pages/AdvancedGuides/Portals"));
 const RenderProps = lazy(() => import("./Pages/AdvancedGuides/RenderProps"));
 const RefsAndDom = lazy(() => import("./Pages/AdvancedGuides/RefsAndDom"));
@@ -64,12 +60,7 @@ export default function Routes() {
         <Route path='/AdvancedGuides' component={AdvancedGuides} />
         <Route path='/Context' component={Context} />
         <Route path='/ErrorBoundaries' component={ErrorBoundaries} />
-        <Route path='/Fragments' component={Fragments} />
         <Route path='/JSXInDepth' component={JSXInDepth} />
-        <Route
-          path='/OptimizingPerformance'
-          component={OptimizingPerformance}
-        />
         <Route path='/Portals' component={Portals} />
         <Route path='/RenderProps' component={RenderProps} />
         <Route path='/RefsAndDom' component={RefsAndDom} />

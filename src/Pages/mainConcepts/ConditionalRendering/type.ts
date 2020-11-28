@@ -1,7 +1,7 @@
-export interface MailProps {
+export type MailProps = {
   unreadMessages: string[];
-}
+};
 
-export interface WarningBannerProps {
+export type WarningBannerProps = {
   warn: boolean;
-}
+};
