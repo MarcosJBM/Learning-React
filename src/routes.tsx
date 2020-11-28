@@ -28,9 +28,6 @@ const CompositionVsInheritance = lazy(
   () => import("./Pages/MainConcepts/CompositionVsInheritance")
 );
 
-const CodeSplitting = lazy(
-  () => import("./Pages/AdvancedGuides/CodeSplitting")
-);
 const Context = lazy(() => import("./Pages/AdvancedGuides/Context"));
 const ErrorBoundaries = lazy(
   () => import("./Pages/AdvancedGuides/ErrorBoundaries")
@@ -65,7 +62,6 @@ export default function Routes() {
         />
 
         <Route path='/AdvancedGuides' component={AdvancedGuides} />
-        <Route path='/CodeSplitting' component={CodeSplitting} />
         <Route path='/Context' component={Context} />
         <Route path='/ErrorBoundaries' component={ErrorBoundaries} />
         <Route path='/Fragments' component={Fragments} />
