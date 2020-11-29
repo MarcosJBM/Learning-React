@@ -32,13 +32,13 @@ export default function RenderProps() {
       </p>
       <p>
         Lembrando que componentes são a unidade básica de reuso de código em
-        React, vamos tentar refatorar esse código para usar o componente{" "}
+        React, vamos tentar refatorar esse código para usar o componente
         {"<Mouse>"}, ele encapsula o comportamento que precisamos reutilizar.
       </p>
 
       <p>
         Por exemplo, suponha que temos o componente {"<Cat>"} que renderiza a
-        image de um gato seguindo o mouse na tela. Poderíamos usar uma prop{" "}
+        image de um gato seguindo o mouse na tela. Poderíamos usar uma prop
         {"<Cat mouse={{ x, y }}>"} que passaria as coordenadas do mouse para o
         componente de forma que este saberia onde posicionar a imagem na tela.
       </p>
@@ -51,7 +51,7 @@ export default function RenderProps() {
         caso.
       </p>
       <p>
-        Aqui é onde a render prop se encaixa: Ao invés de escrever um componente{" "}
+        Aqui é onde a render prop se encaixa: Ao invés de escrever um componente
         {"<Cat>"} dentro de {"<Mouse>"}, e mudar diretamente a saída
         renderizada, podemos passar uma função como prop para {"<Mouse>"}, que
         vai chamá-la para determinar o que renderizar dinamicamente- essa é a

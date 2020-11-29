@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 const Game = lazy(() => import("./Pages/Tutorial"));
 const Home = lazy(() => import("./Pages/Home"));
 const MainConcepts = lazy(() => import("./Pages/MainConcepts"));
-const AdvancedGuides = lazy(() => import("./Pages/AdvancedGuides"));
+const AdvancedConcepts = lazy(() => import("./Pages/AdvancedConcepts"));
 const Hooks = lazy(() => import("./Pages/Hooks"));
 
 const ComponentsAndProps = lazy(
@@ -28,14 +28,12 @@ const CompositionVsInheritance = lazy(
   () => import("./Pages/MainConcepts/CompositionVsInheritance")
 );
 
-const Context = lazy(() => import("./Pages/AdvancedGuides/Context"));
 const ErrorBoundaries = lazy(
-  () => import("./Pages/AdvancedGuides/ErrorBoundaries")
+  () => import("./Pages/AdvancedConcepts/ErrorBoundaries")
 );
-const JSXInDepth = lazy(() => import("./Pages/AdvancedGuides/JSXinDepth"));
-const Portals = lazy(() => import("./Pages/AdvancedGuides/Portals"));
-const RenderProps = lazy(() => import("./Pages/AdvancedGuides/RenderProps"));
-const RefsAndDom = lazy(() => import("./Pages/AdvancedGuides/RefsAndDom"));
+const JSXInDepth = lazy(() => import("./Pages/AdvancedConcepts/JSXinDepth"));
+const Portals = lazy(() => import("./Pages/AdvancedConcepts/Portals"));
+const RenderProps = lazy(() => import("./Pages/AdvancedConcepts/RenderProps"));
 
 export default function Routes() {
   return (
@@ -57,13 +55,11 @@ export default function Routes() {
           component={CompositionVsInheritance}
         />
 
-        <Route path='/AdvancedGuides' component={AdvancedGuides} />
-        <Route path='/Context' component={Context} />
+        <Route path='/AdvancedConcepts' component={AdvancedConcepts} />
         <Route path='/ErrorBoundaries' component={ErrorBoundaries} />
         <Route path='/JSXInDepth' component={JSXInDepth} />
         <Route path='/Portals' component={Portals} />
         <Route path='/RenderProps' component={RenderProps} />
-        <Route path='/RefsAndDom' component={RefsAndDom} />
 
         <Route path='/Hooks' component={Hooks} />
       </Suspense>

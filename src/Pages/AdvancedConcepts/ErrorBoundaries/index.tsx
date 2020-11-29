@@ -5,15 +5,6 @@ export default function ErrorBoundaries() {
     <div>
       <h1>Error Boundaries</h1>
       <p>
-        No passado, erros de JavaScript dentro de componentes costumavam
-        corromper o estado interno do React e fazê-lo emitir erros
-        incompreensíveis nas próximas renderizações. Estes erros eram causados
-        por um erro anterior no código da aplicação, mas o React não fornecia um
-        meio para tratá-los de forma graciosa nos componentes e não conseguia se
-        recuperar deles.
-      </p>
-      <h2>Introduzindo Error Boundaries</h2>
-      <p>
         Error boundaries são componentes React que
         <strong>
           capturam erros de JavaScript em qualquer lugar na sua árvore de

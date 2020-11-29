@@ -25,7 +25,7 @@ export const SignUpDialog = () => {
   }
 
   return (
-    <div className="sign-up-dialog">
+    <div className='sign-up-dialog'>
       <Dialog
         title='Programa de Exploração de Marte '
         message='Como gostaria de ser chamado?'

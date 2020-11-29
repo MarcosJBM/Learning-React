@@ -8,7 +8,7 @@ function Home() {
       <br />
       <Link to='/MainConcepts'>Principais Conceitos</Link>
       <br />
-      <Link to='/AdvancedGuides'>Guias Avançados</Link>
+      <Link to='/AdvancedConcepts'>Conceitos Avançados</Link>
       <br />
       <Link to='/Hooks'>Hooks</Link>
     </Fragment>

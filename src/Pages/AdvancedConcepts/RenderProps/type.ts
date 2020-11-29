@@ -3,7 +3,7 @@ export type MouseState = {
   y: number;
 };
 
-export type CatProps = {
+export type ArrowProps = {
   mouse: MouseState;
 };
 

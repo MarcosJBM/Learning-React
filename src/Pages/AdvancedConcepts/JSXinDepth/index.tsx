@@ -9,10 +9,6 @@ export default function JSXInDepth() {
   return (
     <div>
       <h1>JSX In Depth</h1>
-      <p>
-        Fundamentalmente, JSX é somente um açúcar sintático (syntactic sugar)
-        para a função React.createElement(component, props, ...children).
-      </p>
       <h2>Usando Dot Notation Para Tipos JSX</h2>
       <p>
         Você também pode se referir a um componente React usando Dot Notation no

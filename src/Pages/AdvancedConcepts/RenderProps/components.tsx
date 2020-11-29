@@ -1,26 +1,23 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
-import { MouseState, CatProps, MouseProps } from "./type";
+import { MouseState, MouseProps, ArrowProps } from "./type";
 
-class Cat extends Component<CatProps> {
-  render() {
-    const seta =
-      "https://i.pinimg.com/originals/95/3d/6c/953d6c0a8026ae79e81a689692428c6f.png";
-    const { mouse } = this.props;
-    return (
-      <img
-        src={seta}
-        style={{
-          position: "absolute",
-          left: mouse.x,
-          top: mouse.y,
-          height: 20,
-          width: 20,
-        }}
-      />
-    );
-  }
-}
+const Arrow = ({ mouse }: ArrowProps) => {
+  const seta =
+    "https://i.pinimg.com/originals/95/3d/6c/953d6c0a8026ae79e81a689692428c6f.png";
+  return (
+    <img
+      src={seta}
+      style={{
+        position: "absolute",
+        left: mouse.x,
+        top: mouse.y,
+        height: 20,
+        width: 20,
+      }}
+    />
+  );
+};
 
 class Mouse extends Component<MouseProps, MouseState> {
   constructor(props: MouseProps) {
@@ -54,6 +51,6 @@ class Mouse extends Component<MouseProps, MouseState> {
 export const MouseTracker = () => (
   <div>
     <h1>Mova o mouse por aí</h1>
-    <Mouse>{mouse => <Cat mouse={mouse} />}</Mouse>
+    <Mouse>{mouse => <Arrow mouse={mouse} />}</Mouse>
   </div>
 );
