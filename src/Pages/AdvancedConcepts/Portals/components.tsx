@@ -1,27 +1,40 @@
-import React, { Component, Fragment, useEffect, useState } from "react";
-import ReactDOM from "react-dom";
+import React, { useState } from "react";
+import { ModalProps } from "./type";
 
-export function Counter() {
-  const [count, setCount] = useState(0);
+import "./styles.css";
 
-  useEffect(() => {
-    document.title = `Clicks ${count}`;
-  });
+export const Dashboard = () => {
+  const [show, setShow] = useState(false);
+
+  function showModal() {
+    setShow(true);
+  }
+
+  function hideModal() {
+    setShow(false);
+  }
 
   return (
-    <Fragment>
-      <p>
-        Voce clicou <strong>{count}</strong> vezes.
-      </p>
-      <button onClick={() => setCount(count + 1)}>Clique</button>
-    </Fragment>
+    <main>
+      <Modal show={show} handleClose={hideModal}>
+        <h3>Opa meu bom, aparentemente o Modal ta funcionando</h3>
+      </Modal>
+      <button type='button' onClick={showModal}>
+        Open
+      </button>
+    </main>
   );
-}
+};
 
-const Outsider = () => ReactDOM.createPortal(<Counter />, document.body);
+const Modal: React.FC<ModalProps> = ({ show, children, handleClose }) => {
+  const showHideClassName = show ? "modal display-block" : "modal display-none";
 
-export class App extends Component {
-  render = () => {
-    return <Outsider />;
-  };
-}
+  return (
+    <div className={showHideClassName}>
+      <section className='modal-main'>
+        {children}
+        <button onClick={handleClose}>Close</button>
+      </section>
+    </div>
+  );
+};
