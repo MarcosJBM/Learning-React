@@ -1,15 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import { Counter, CounterTwo } from "./components";
-
-export default function Hooks() {
+function Hooks() {
   return (
     <div>
-      <h1>Hooks de forma resumida</h1>
-
-      <Counter />
-
-      <CounterTwo />
+      <Link to='/UseStateHook'>Use State Hook</Link>
     </div>
   );
 }
+
+export default Hooks;
