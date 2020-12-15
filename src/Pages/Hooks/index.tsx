@@ -5,6 +5,8 @@ function Hooks() {
   return (
     <div>
       <Link to='/UseStateHook'>Use State Hook</Link>
+      <br />
+      <Link to='/UseEffectHook'>Use Effect Hook</Link>
     </div>
   );
 }

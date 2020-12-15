@@ -35,7 +35,8 @@ const JSXInDepth = lazy(() => import("./Pages/AdvancedConcepts/JSXinDepth"));
 const Portals = lazy(() => import("./Pages/AdvancedConcepts/Portals"));
 const RenderProps = lazy(() => import("./Pages/AdvancedConcepts/RenderProps"));
 
-const UseStateHook = lazy(() => import("./Pages/Hooks/UseState"));
+const UseStateHook = lazy(() => import("./Pages/Hooks/UseStateHook"));
+const UseEffectHook = lazy(() => import("./Pages/Hooks/UseEffectHook"));
 
 export default function Routes() {
   return (
@@ -65,6 +66,7 @@ export default function Routes() {
 
         <Route path='/Hooks' component={Hooks} />
         <Route path='/UseStateHook' component={UseStateHook} />
+        <Route path='/UseEffectHook' component={UseEffectHook} />
       </Suspense>
     </BrowserRouter>
   );
