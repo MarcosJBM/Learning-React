@@ -37,6 +37,7 @@ const RenderProps = lazy(() => import("./Pages/AdvancedConcepts/RenderProps"));
 
 const UseStateHook = lazy(() => import("./Pages/Hooks/UseStateHook"));
 const UseEffectHook = lazy(() => import("./Pages/Hooks/UseEffectHook"));
+const UseMemoHook = lazy(() => import("./Pages/Hooks/UseMemoHook"));
 
 export default function Routes() {
   return (
@@ -67,6 +68,7 @@ export default function Routes() {
         <Route path='/Hooks' component={Hooks} />
         <Route path='/UseStateHook' component={UseStateHook} />
         <Route path='/UseEffectHook' component={UseEffectHook} />
+        <Route path='/UseMemoHook' component={UseMemoHook} />
       </Suspense>
     </BrowserRouter>
   );
