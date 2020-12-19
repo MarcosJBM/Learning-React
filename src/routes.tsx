@@ -28,9 +28,6 @@ const CompositionVsInheritance = lazy(
   () => import("./Pages/MainConcepts/CompositionVsInheritance")
 );
 
-const ErrorBoundaries = lazy(
-  () => import("./Pages/AdvancedConcepts/ErrorBoundaries")
-);
 const JSXInDepth = lazy(() => import("./Pages/AdvancedConcepts/JSXinDepth"));
 const Portals = lazy(() => import("./Pages/AdvancedConcepts/Portals"));
 const RenderProps = lazy(() => import("./Pages/AdvancedConcepts/RenderProps"));
@@ -61,7 +58,6 @@ export default function Routes() {
         />
 
         <Route path='/AdvancedConcepts' component={AdvancedConcepts} />
-        <Route path='/ErrorBoundaries' component={ErrorBoundaries} />
         <Route path='/JSXInDepth' component={JSXInDepth} />
         <Route path='/Portals' component={Portals} />
         <Route path='/RenderProps' component={RenderProps} />
