@@ -9,6 +9,8 @@ function Hooks() {
       <Link to='/UseEffectHook'>Use Effect Hook</Link>
       <br />
       <Link to='/UseMemoHook'>Use Memo Hook</Link>
+      <br />
+      <Link to='/UseContextHook'>Use Context Hook</Link>
     </div>
   );
 }

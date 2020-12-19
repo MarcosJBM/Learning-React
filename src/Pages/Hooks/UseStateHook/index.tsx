@@ -12,8 +12,8 @@ export default function UseStateHook() {
   }
 
   function handleAge(event: ChangeEvent<HTMLInputElement>) {
-    const agaValue = event.target.value;
-    setAge(agaValue);
+    const ageValue = event.target.value;
+    setAge(ageValue);
   }
 
   function handleSubmit(event: SyntheticEvent) {

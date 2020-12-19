@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  max-width: 600px;
+  margin: 60px auto;
+}
+
+.app > h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 8px 10px;
+}
+
+.card:not(:last-child) {
+  border-bottom: 1px solid #333333;
+}
+
+.card--text h1 {
+  color: #0970b4;
+  text-transform: capitalize;
+}
+
+.card--button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #00aa69;
+  border: none;
+  color: #fff;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.form > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form input {
+  padding: 10px 12px;
+  border: none;
+  display: block;
+  margin: 4px 10px 0 0;
+  outline: none;
+  background: #f0f0f5;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form button {
+  background: #099dff;
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.line-through {
+  text-decoration: line-through;
+  color: #777 !important;
+}
+
+.hide-button {
+  display: none;
+}
