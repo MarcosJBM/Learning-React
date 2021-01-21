@@ -1,6 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
+import GlobalStyles from "./styles/GlobalStyles";
+
 const Game = lazy(() => import("./Pages/Tutorial"));
 const Home = lazy(() => import("./Pages/Home"));
 const MainConcepts = lazy(() => import("./Pages/MainConcepts"));
@@ -68,6 +70,7 @@ export default function Routes() {
         <Route path='/UseMemoHook' component={UseMemoHook} />
         <Route path='/UseContextHook' component={UseContextHook} />
       </Suspense>
+      <GlobalStyles />
     </BrowserRouter>
   );
 }

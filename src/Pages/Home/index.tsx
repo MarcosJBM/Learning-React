@@ -1,18 +1,20 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-function Home() {
+import { Container, ReactLogo } from "./styles";
+
+import logo from "../../assets/react-logo.png";
+
+const Home = () => {
   return (
-    <Fragment>
-      <Link to='/Game'>Jogo da Velha</Link>
-      <br />
-      <Link to='/MainConcepts'>Principais Conceitos</Link>
-      <br />
-      <Link to='/AdvancedConcepts'>Conceitos Avançados</Link>
-      <br />
-      <Link to='/Hooks'>Hooks</Link>
-    </Fragment>
+    <Container>
+      <ReactLogo src={logo} alt={"React Logo"} />
+      <Link to={"/Game"}>Jogo da Velha</Link>
+      <Link to={"/MainConcepts"}>Principais Conceitos</Link>
+      <Link to={"/AdvancedConcepts"}>Conceitos Avançados</Link>
+      <Link to={"/Hooks"}>Hooks</Link>
+    </Container>
   );
-}
+};
 
 export default Home;
