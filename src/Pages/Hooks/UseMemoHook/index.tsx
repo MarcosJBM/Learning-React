@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 
-export default function UseMemoHook() {
+import { Container, List } from "./styles";
+
+const UseMemoHook = () => {
   const users = [
     { id: 1, name: "Marcos", age: 18 },
     { id: 2, name: "Luiz", age: 17 },
@@ -9,11 +11,17 @@ export default function UseMemoHook() {
     { id: 5, name: "Nathan", age: 20 },
   ];
 
-  // use Mesmo é utilizado quando vc for fazer algum tipo de calculo dentro da sua aplicação
   const returnUsersName = useMemo(
-    () => users.map(user => <li key={user.id.toString()}>{user.name}</li>),
+    () => users.map(user => <List key={user.id.toString()}>{user.name}</List>),
     [users]
   );
 
-  return <div>{returnUsersName}</div>;
-}
+  return (
+    <Container>
+      <h2>User´s Name</h2>
+      {returnUsersName}
+    </Container>
+  );
+};
+
+export default UseMemoHook;

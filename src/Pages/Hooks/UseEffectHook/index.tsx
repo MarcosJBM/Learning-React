@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 
+import { Container, Avatar, Informations } from "./styles";
+
 interface UserProps {
   name: string;
   login: string;
@@ -9,22 +11,25 @@ interface UserProps {
   bio: string;
 }
 
-export default function UseEffectHook() {
+const UseEffectHook = () => {
   const [user, setUser] = useState<UserProps>();
 
   useEffect(() => {
     axios.get("https://api.github.com/users/marcosjbm").then(response => {
-      const userData = response.data;
-      setUser(userData);
+      setUser(response.data);
     });
-  }, []);
+  }, [user]);
 
   return (
-    <div id='user-container'>
-      <img src={user?.avatar_url} alt={user?.login} />
-      <h1>{user?.name}</h1>
-      <h3>{user?.login}</h3>
-      <p>{user?.bio}</p>
-    </div>
+    <Container>
+      <Avatar src={user?.avatar_url} alt={user?.name} />
+      <Informations>
+        <h1>{user?.name}</h1>
+        <h2>{user?.login}</h2>
+        <p>{user?.bio}</p>
+      </Informations>
+    </Container>
   );
-}
+};
+
+export default UseEffectHook;

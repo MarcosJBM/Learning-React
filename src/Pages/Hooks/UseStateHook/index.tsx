@@ -1,20 +1,10 @@
-import React, { ChangeEvent, SyntheticEvent, useState } from "react";
+import React, { SyntheticEvent, useState } from "react";
 
-import "./styles.css";
+import { Container, Form, Button } from "./styles";
 
-export default function UseStateHook() {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-
-  function handleName(event: ChangeEvent<HTMLInputElement>) {
-    const nameValue = event.target.value;
-    setName(nameValue);
-  }
-
-  function handleAge(event: ChangeEvent<HTMLInputElement>) {
-    const ageValue = event.target.value;
-    setAge(ageValue);
-  }
+const UseStateHook = () => {
+  const [name, setName] = useState<string>("");
+  const [age, setAge] = useState<string>("");
 
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
@@ -27,24 +17,26 @@ export default function UseStateHook() {
   }
 
   return (
-    <div id='form-container'>
-      <form onSubmit={handleSubmit}>
+    <Container>
+      <Form onSubmit={handleSubmit}>
         <label htmlFor='name'>Nome do Usuário</label>
         <input
           type='text'
           value={name}
-          onChange={handleName}
+          onChange={e => setName(e.target.value)}
           placeholder='Nome'
         />
         <label htmlFor='age'>Idade do Usuário</label>
         <input
           type='number'
           value={age}
-          onChange={handleAge}
+          onChange={e => setAge(e.target.value)}
           placeholder='Idade'
         />
-        <button type='submit'>Salvar</button>
-      </form>
-    </div>
+        <Button type='submit'>Salvar</Button>
+      </Form>
+    </Container>
   );
-}
+};
+
+export default UseStateHook;
