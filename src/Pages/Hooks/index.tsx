@@ -1,18 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Hooks() {
+import { Container } from "./styles";
+
+const Hooks = () => {
   return (
-    <div>
-      <Link to='/UseStateHook'>Use State Hook</Link>
-      <br />
-      <Link to='/UseEffectHook'>Use Effect Hook</Link>
-      <br />
-      <Link to='/UseMemoHook'>Use Memo Hook</Link>
-      <br />
-      <Link to='/UseContextHook'>Use Context Hook</Link>
-    </div>
+    <Container>
+      <Link to={"/UseStateHook"}>Use State Hook</Link>
+      <Link to={"/UseEffectHook"}>Use Effect Hook</Link>
+      <Link to={"/UseMemoHook"}>Use Memo Hook</Link>
+      <Link to={"/UseContextHook"}>Use Context Hook</Link>
+    </Container>
   );
-}
+};
 
 export default Hooks;

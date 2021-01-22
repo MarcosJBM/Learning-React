@@ -1,45 +1,33 @@
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Game from "./pages/Tutorial";
+import MainConcepts from "./pages/MainConcepts";
+import AdvancedConcepts from "./pages/AdvancedConcepts";
+import Hooks from "./pages/Hooks";
+
+import ComponentsAndProps from "./pages/MainConcepts/ComponentsAndProps";
+import StateAndLifeCycle from "./pages/MainConcepts/StateAndLifeCycle";
+import HandlingEvents from "./pages/MainConcepts/HandlingEvents";
+import ConditionalRendering from "./pages/MainConcepts/ConditionalRendering";
+import ListsAndKeys from "./pages/MainConcepts/ListsAndKeys";
+import Forms from "./pages/MainConcepts/Forms";
+import RaisingTheState from "./pages/MainConcepts/RaisingTheState";
+import CompositionVsInheritance from "./pages/MainConcepts/CompositionVsInheritance";
+
+import JSXInDepth from "./pages/AdvancedConcepts/JSXinDepth";
+import Portals from "./pages/AdvancedConcepts/Portals";
+import RenderProps from "./pages/AdvancedConcepts/RenderProps";
+
+import UseStateHook from "./pages/Hooks/UseStateHook";
+import UseEffectHook from "./pages/Hooks/UseEffectHook";
+import UseMemoHook from "./pages/Hooks/UseMemoHook";
+import UseContextHook from "./pages/Hooks/UseContextHook";
 
 import GlobalStyles from "./styles/GlobalStyles";
 
-const Game = lazy(() => import("./Pages/Tutorial"));
-const Home = lazy(() => import("./Pages/Home"));
-const MainConcepts = lazy(() => import("./Pages/MainConcepts"));
-const AdvancedConcepts = lazy(() => import("./Pages/AdvancedConcepts"));
-const Hooks = lazy(() => import("./Pages/Hooks"));
-
-const ComponentsAndProps = lazy(
-  () => import("./Pages/MainConcepts/ComponentsAndProps")
-);
-const StateAndLifeCycle = lazy(
-  () => import("./Pages/MainConcepts/StateAndLifeCycle")
-);
-const HandlingEvents = lazy(
-  () => import("./Pages/MainConcepts/HandlingEvents")
-);
-const ConditionalRendering = lazy(
-  () => import("./Pages/MainConcepts/ConditionalRendering")
-);
-const ListsAndKeys = lazy(() => import("./Pages/MainConcepts/ListsAndKeys"));
-const Forms = lazy(() => import("./Pages/MainConcepts/Forms"));
-const RaisingTheState = lazy(
-  () => import("./Pages/MainConcepts/RaisingTheState")
-);
-const CompositionVsInheritance = lazy(
-  () => import("./Pages/MainConcepts/CompositionVsInheritance")
-);
-
-const JSXInDepth = lazy(() => import("./Pages/AdvancedConcepts/JSXinDepth"));
-const Portals = lazy(() => import("./Pages/AdvancedConcepts/Portals"));
-const RenderProps = lazy(() => import("./Pages/AdvancedConcepts/RenderProps"));
-
-const UseStateHook = lazy(() => import("./Pages/Hooks/UseStateHook"));
-const UseEffectHook = lazy(() => import("./Pages/Hooks/UseEffectHook"));
-const UseMemoHook = lazy(() => import("./Pages/Hooks/UseMemoHook"));
-const UseContextHook = lazy(() => import("./Pages/Hooks/UseContextHook"));
-
-export default function Routes() {
+const Routes = () => {
   return (
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
@@ -73,4 +61,6 @@ export default function Routes() {
       <GlobalStyles />
     </BrowserRouter>
   );
-}
+};
+
+export default Routes;
