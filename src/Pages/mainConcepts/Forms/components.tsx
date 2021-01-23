@@ -1,39 +1,29 @@
-import React, { ChangeEvent, SyntheticEvent, useState } from "react";
+import React, { SyntheticEvent, useState } from "react";
 
 export const NameForm = () => {
-  const [name, setName] = useState("");
-
-  function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    const inputValue = event.target.value;
-    setName(inputValue);
-  }
+  const [name, setName] = useState<string>("");
 
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
+
     alert(`Nome Enviado: ${name}`);
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor='name'>Nome:</label>
-      <input type='text' value={name} onChange={handleChange} />
+      <input type='text' value={name} onChange={e => setName(e.target.value)} />
       <button type='submit'>Enviar</button>
     </form>
   );
 };
 
 export const EssayForm = () => {
-  const [value, setValue] = useState(
-    "Por favor, escreva uma dissertação sobre o seu elemento DOM favorito"
-  );
-
-  function handleChange(event: ChangeEvent<HTMLTextAreaElement>) {
-    const textAreaValue = event.target.value;
-    setValue(textAreaValue);
-  }
+  const [value, setValue] = useState<string>("");
 
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
+
     alert("Dissertação Enviada!");
   }
 
@@ -41,7 +31,7 @@ export const EssayForm = () => {
     <form onSubmit={handleSubmit}>
       <label>
         Dissertação:
-        <textarea value={value} onChange={handleChange} />
+        <textarea value={value} onChange={e => setValue(e.target.value)} />
       </label>
       <button type='submit'>Enviar</button>
     </form>
@@ -49,22 +39,18 @@ export const EssayForm = () => {
 };
 
 export const FlavorForm = () => {
-  const [flavor, setFlavor] = useState("Coco");
-
-  function handleChange(event: ChangeEvent<HTMLSelectElement>) {
-    const selectValue = event.target.value;
-    setFlavor(selectValue);
-  }
+  const [flavor, setFlavor] = useState<string>("Coco");
 
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
+
     alert(`Sabor Selecionado: ${flavor}`);
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor='favoriteFlavor'>Escolha um Sabor:</label>
-      <select value={flavor} onChange={handleChange}>
+      <select value={flavor} onChange={e => setFlavor(e.target.value)}>
         <option value='laranja'>Laranja</option>
         <option value='limao'>Limão</option>
         <option value='coco'>Coco</option>

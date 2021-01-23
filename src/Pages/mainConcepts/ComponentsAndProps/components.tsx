@@ -4,29 +4,27 @@ import { formatDate } from "./functions";
 
 import { CommentProps, AvatarProps } from "./type";
 
-export function Welcome(props: { name: string }) {
-  return <h3>Hello, {props.name}</h3>;
-}
+const Avatar = ({ avatarURL, name }: AvatarProps) => {
+  return <img className='avatar' src={avatarURL} alt={name} />;
+};
 
-function Avatar({ user }: AvatarProps) {
-  return <img className='avatar' src={user.avatarURL} alt={user.name} />;
-}
-
-function UserInfo({ user }: AvatarProps) {
+const UserInfo = ({ avatarURL, name }: AvatarProps) => {
   return (
     <div className='userInfo'>
-      <Avatar user={user} />
-      <div className='userInfo-name'>{user.name}</div>
+      <Avatar avatarURL={avatarURL} name={name} />
+      <div className='userInfo-name'>{name}</div>
     </div>
   );
-}
+};
 
-export function Comment(props: CommentProps) {
+const Comment = ({ author, text, date }: CommentProps) => {
   return (
     <div className='comment'>
-      <UserInfo user={props.author} />
-      <div className='commentText'>{props.text}</div>
-      <div className='commentDate'>{formatDate(props.date)}</div>
+      <UserInfo avatarURL={author.avatarURL} name={author.name} />
+      <div className='commentText'>{text}</div>
+      <div className='commentDate'>{formatDate(date)}</div>
     </div>
   );
-}
+};
+
+export { Comment };

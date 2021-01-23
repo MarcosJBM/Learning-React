@@ -8,8 +8,6 @@ export type CommentProps = {
 };
 
 export type AvatarProps = {
-  user: {
-    avatarURL: string;
-    name: string;
-  };
+  avatarURL: string;
+  name: string;
 };
