@@ -1,19 +1,22 @@
 import * as React from "react";
 
-import TodoProvider from "./context/todoContext";
 import Todos from "./containers/Todos";
 import AddTodo from "./components/AddTodo";
 
-import "./styles/styles.css";
+import TodoProvider from "./context/todoContext";
 
-export default function App() {
+import { Main } from "./styles";
+
+const App = () => {
   return (
     <TodoProvider>
-      <main className='app'>
+      <Main>
         <h1>My Todos</h1>
         <AddTodo />
         <Todos />
-      </main>
+      </Main>
     </TodoProvider>
   );
-}
+};
+
+export default App;

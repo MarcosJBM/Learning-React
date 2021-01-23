@@ -1,7 +1,10 @@
 import * as React from "react";
 
 import { TodoContext } from "../context/todoContext";
+
 import { ContextType, ITodo } from "../types";
+
+import { Form, TodoInfo, ButtonForm } from "../styles";
 
 const AddTodo: React.FC = () => {
   const { saveTodo } = React.useContext(TodoContext) as ContextType;
@@ -20,21 +23,18 @@ const AddTodo: React.FC = () => {
   };
 
   return (
-    <form className='form' onSubmit={e => handleSaveTodo(e, formData)}>
-      <div>
-        <div>
-          <label htmlFor='name'>Titulo</label>
-          <input onChange={handleForm} type='text' id='title' />
-        </div>
-        <div>
-          <label htmlFor='description'>Descrição</label>
-          <input onChange={handleForm} type='text' id='description' />
-        </div>
-      </div>
-      <button disabled={formData === undefined ? true : false}>
+    <Form onSubmit={e => handleSaveTodo(e, formData)}>
+      <TodoInfo>
+        <label htmlFor='name'>Titulo</label>
+        <input onChange={handleForm} type='text' />
+
+        <label htmlFor='description'>Descrição</label>
+        <input onChange={handleForm} type='text' />
+      </TodoInfo>
+      <ButtonForm disabled={formData === undefined ? true : false}>
         Adicionar
-      </button>
-    </form>
+      </ButtonForm>
+    </Form>
   );
 };
 

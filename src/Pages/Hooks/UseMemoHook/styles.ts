@@ -21,6 +21,6 @@ export const List = styled.li`
 
   list-style-type: none;
 
-  background-color: crimson;
-  color: white;
+  background-color: var(--black);
+  color: var(--blue);
 `;

@@ -2,26 +2,29 @@ import * as React from "react";
 
 import { ITodo } from "../types";
 
+import { Card, CardText, CardButton } from "../styles";
+
 type Props = {
   todo: ITodo;
   updateTodo: (id: number) => void;
 };
 
 const Todo: React.FC<Props> = ({ todo, updateTodo }) => {
-  const checkTodo: string = todo.status ? `line-through` : "";
+  const checkTodo: string = todo.status ? "line-through" : "";
+
   return (
-    <div className='card'>
-      <div className='card--text'>
+    <Card>
+      <CardText>
         <h1 className={checkTodo}>{todo.title}</h1>
         <span className={checkTodo}>{todo.description}</span>
-      </div>
-      <button
+      </CardText>
+      <CardButton
         onClick={() => updateTodo(todo.id)}
-        className={todo.status ? `hide-button` : "card--button"}
+        className={todo.status ? "hide-button" : ""}
       >
         Concluido
-      </button>
-    </div>
+      </CardButton>
+    </Card>
   );
 };
 

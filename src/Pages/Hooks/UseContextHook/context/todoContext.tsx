@@ -4,7 +4,7 @@ import { ContextType, ITodo } from "../types";
 
 export const TodoContext = React.createContext<ContextType | null>(null);
 
-const TodoProvider: React.FC<React.ReactNode> = ({ children }) => {
+const TodoProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = React.useState<ITodo[]>([
     {
       id: 1,
