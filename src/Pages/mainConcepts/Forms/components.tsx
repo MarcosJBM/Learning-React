@@ -1,13 +1,13 @@
-import React, { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState } from 'react';
 
 export const NameForm = () => {
-  const [name, setName] = useState<string>("");
+  const [name, setName] = useState<string>('');
 
-  function handleSubmit(event: SyntheticEvent) {
+  const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
 
     alert(`Nome Enviado: ${name}`);
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -19,13 +19,13 @@ export const NameForm = () => {
 };
 
 export const EssayForm = () => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>('');
 
-  function handleSubmit(event: SyntheticEvent) {
+  const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
 
-    alert("Dissertação Enviada!");
-  }
+    alert('Dissertação Enviada!');
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -39,13 +39,13 @@ export const EssayForm = () => {
 };
 
 export const FlavorForm = () => {
-  const [flavor, setFlavor] = useState<string>("Coco");
+  const [flavor, setFlavor] = useState<string>('Coco');
 
-  function handleSubmit(event: SyntheticEvent) {
+  const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
 
     alert(`Sabor Selecionado: ${flavor}`);
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>

@@ -8,8 +8,7 @@ import { AdvancedGuides } from './pages/AdvancedConcepts';
 import Hooks from './pages/Hooks';
 
 import { ComponentsAndProps } from './pages/MainConcepts/ComponentsAndProps';
-import StateAndLifeCycle from './pages/MainConcepts/StateAndLifeCycle';
-import Forms from './pages/MainConcepts/Forms';
+import { Forms } from './pages/MainConcepts/Forms';
 import RaisingTheState from './pages/MainConcepts/RaisingTheState';
 
 import { JSXInDepth } from './pages/AdvancedConcepts/JSXinDepth';
@@ -31,7 +30,6 @@ export const Routes = () => {
 
         <Route path='/main-concepts' component={MainConcepts} />
         <Route path='/components-and-props' component={ComponentsAndProps} />
-        <Route path='/state-and-life-cycle' component={StateAndLifeCycle} />
         <Route path='/forms' component={Forms} />
         <Route path='/raising-the-state' component={RaisingTheState} />
 

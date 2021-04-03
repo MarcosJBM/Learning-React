@@ -1,8 +1,6 @@
-import React from "react";
+import { NameForm, EssayForm, FlavorForm } from './components';
 
-import { NameForm, EssayForm, FlavorForm } from "./components";
-
-export default function Forms() {
+export const Forms = () => {
   return (
     <div>
       <h1>Formulários</h1>
@@ -14,4 +12,4 @@ export default function Forms() {
       <FlavorForm />
     </div>
   );
-}
+};
