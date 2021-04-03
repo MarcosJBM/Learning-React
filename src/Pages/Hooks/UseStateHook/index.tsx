@@ -1,20 +1,20 @@
-import React, { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState } from 'react';
 
-import { Container, Form, Button } from "./styles";
+import { Container, Form, Button } from './styles';
 
-const UseStateHook = () => {
-  const [name, setName] = useState<string>("");
-  const [age, setAge] = useState<string>("");
+export const UseStateHook = () => {
+  const [name, setName] = useState<string>('');
+  const [age, setAge] = useState<string>('');
 
-  function handleSubmit(event: SyntheticEvent) {
+  const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
 
-    if (name === "" && age === "") {
-      alert("Preencha os campos por favor");
+    if (name === '' && age === '') {
+      alert('Preencha os campos por favor');
     } else {
       alert(`Bem Vindo: ${name}`);
     }
-  }
+  };
 
   return (
     <Container>
@@ -38,5 +38,3 @@ const UseStateHook = () => {
     </Container>
   );
 };
-
-export default UseStateHook;

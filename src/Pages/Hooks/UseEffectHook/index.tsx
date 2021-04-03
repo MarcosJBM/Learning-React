@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import axios from "axios";
+import axios, { AxiosError, AxiosResponse } from 'axios';
 
-import { Container, Avatar, Informations } from "./styles";
+import { Container, Avatar, Informations } from './styles';
 
 interface UserProps {
   name: string;
@@ -11,13 +11,21 @@ interface UserProps {
   bio: string;
 }
 
-const UseEffectHook = () => {
+export const UseEffectHook = () => {
   const [user, setUser] = useState<UserProps>();
 
   useEffect(() => {
-    axios.get("https://api.github.com/users/marcosjbm").then(response => {
-      setUser(response.data);
-    });
+    axios
+      .get<UserProps>('https://api.github.com/users/marcosjbm')
+      .then((response: AxiosResponse) => {
+        setUser(response.data);
+      })
+      .catch((error: AxiosError) => {
+        console.error({
+          message: error.message,
+          statusCode: error.response?.status,
+        });
+      });
   }, [user]);
 
   return (
@@ -31,5 +39,3 @@ const UseEffectHook = () => {
     </Container>
   );
 };
-
-export default UseEffectHook;

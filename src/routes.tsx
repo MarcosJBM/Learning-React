@@ -5,7 +5,7 @@ import { Home } from './pages/Home';
 import Game from './pages/Tutorial';
 import { MainConcepts } from './pages/MainConcepts';
 import { AdvancedGuides } from './pages/AdvancedConcepts';
-import Hooks from './pages/Hooks';
+import { Hooks } from './pages/Hooks';
 
 import { ComponentsAndProps } from './pages/MainConcepts/ComponentsAndProps';
 import { Forms } from './pages/MainConcepts/Forms';
@@ -14,9 +14,9 @@ import { RaisingTheState } from './pages/MainConcepts/RaisingTheState';
 import { JSXInDepth } from './pages/AdvancedConcepts/JSXinDepth';
 import { Portals } from './pages/AdvancedConcepts/Portals';
 
-import UseStateHook from './pages/Hooks/UseStateHook';
-import UseEffectHook from './pages/Hooks/UseEffectHook';
-import UseMemoHook from './pages/Hooks/UseMemoHook';
+import { UseStateHook } from './pages/Hooks/UseStateHook';
+import { UseEffectHook } from './pages/Hooks/UseEffectHook';
+import { UseMemoHook } from './pages/Hooks/UseMemoHook';
 import UseContextHook from './pages/Hooks/UseContextHook';
 
 import GlobalStyles from './styles/GlobalStyles';

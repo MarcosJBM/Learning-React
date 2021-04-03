@@ -1,14 +1,14 @@
-import React, { useMemo } from "react";
+import { useMemo } from 'react';
 
-import { Container, List } from "./styles";
+import { Container, List } from './styles';
 
-const UseMemoHook = () => {
+export const UseMemoHook = () => {
   const users = [
-    { id: 1, name: "Marcos", age: 18 },
-    { id: 2, name: "Luiz", age: 17 },
-    { id: 3, name: "Daniel", age: 17 },
-    { id: 4, name: "Godoi", age: 20 },
-    { id: 5, name: "Nathan", age: 20 },
+    { id: 1, name: 'Marcos', age: 18 },
+    { id: 2, name: 'Luiz', age: 17 },
+    { id: 3, name: 'Daniel', age: 17 },
+    { id: 4, name: 'Godoi', age: 20 },
+    { id: 5, name: 'Nathan', age: 20 },
   ];
 
   const returnUsersName = useMemo(
@@ -23,5 +23,3 @@ const UseMemoHook = () => {
     </Container>
   );
 };
-
-export default UseMemoHook;
