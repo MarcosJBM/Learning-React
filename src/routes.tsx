@@ -17,7 +17,7 @@ import { Portals } from './pages/AdvancedConcepts/Portals';
 import { UseStateHook } from './pages/Hooks/UseStateHook';
 import { UseEffectHook } from './pages/Hooks/UseEffectHook';
 import { UseMemoHook } from './pages/Hooks/UseMemoHook';
-import UseContextHook from './pages/Hooks/UseContextHook';
+import { UseContextHook } from './pages/Hooks/UseContextHook';
 
 import GlobalStyles from './styles/GlobalStyles';
 
