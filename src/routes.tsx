@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import Game from './pages/Tutorial';
 import MainConcepts from './pages/MainConcepts';
-import AdvancedConcepts from './pages/AdvancedConcepts';
+import { AdvancedGuides } from './pages/AdvancedConcepts';
 import Hooks from './pages/Hooks';
 
 import ComponentsAndProps from './pages/MainConcepts/ComponentsAndProps';
@@ -14,7 +14,6 @@ import RaisingTheState from './pages/MainConcepts/RaisingTheState';
 
 import { JSXInDepth } from './pages/AdvancedConcepts/JSXinDepth';
 import { Portals } from './pages/AdvancedConcepts/Portals';
-import RenderProps from './pages/AdvancedConcepts/RenderProps';
 
 import UseStateHook from './pages/Hooks/UseStateHook';
 import UseEffectHook from './pages/Hooks/UseEffectHook';
@@ -36,10 +35,9 @@ export const Routes = () => {
         <Route path='/forms' component={Forms} />
         <Route path='/raising-the-state' component={RaisingTheState} />
 
-        <Route path='/advanced-concepts' component={AdvancedConcepts} />
+        <Route path='/advanced-concepts' component={AdvancedGuides} />
         <Route path='/jsx-in-depth' component={JSXInDepth} />
         <Route path='/portals' component={Portals} />
-        <Route path='/render-props' component={RenderProps} />
 
         <Route path='/hooks' component={Hooks} />
         <Route path='/use-state-hook' component={UseStateHook} />
