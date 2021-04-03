@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, FormEvent } from 'react';
 
 export interface ProductProps {
   id?: number;
@@ -14,4 +14,5 @@ export interface ProductsContextProps {
   productDescriptionHandler: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   addProduct: () => void;
   removeProduct: (id: number) => void;
+  productFormHandler: (event: FormEvent) => void;
 }

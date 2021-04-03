@@ -1,4 +1,4 @@
-import { ChangeEvent, createContext, useState } from 'react';
+import { ChangeEvent, createContext, FormEvent, useState } from 'react';
 
 import { ProductProps, ProductsContextProps } from '../@types';
 
@@ -27,11 +27,17 @@ export const ProductsProvider: React.FC = ({ children }) => {
     };
 
     setProducts([...products, newProduct]);
+    setProductName('');
+    setProductDescription('');
   };
 
   const removeProduct = (id: number) => {
     const removedProduct = products.filter(product => product.id !== id);
     setProducts(removedProduct);
+  };
+
+  const productFormHandler = (event: FormEvent) => {
+    event.preventDefault();
   };
 
   return (
@@ -44,6 +50,7 @@ export const ProductsProvider: React.FC = ({ children }) => {
         productDescriptionHandler,
         addProduct,
         removeProduct,
+        productFormHandler,
       }}
     >
       {children}

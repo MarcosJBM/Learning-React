@@ -9,10 +9,11 @@ export const ProductForm = () => {
     productNameHandler,
     productDescriptionHandler,
     addProduct,
+    productFormHandler,
   } = useContext(ProductsContext);
 
   return (
-    <form>
+    <form onSubmit={productFormHandler}>
       <input type='text' value={productName} onChange={productNameHandler} />
       <textarea
         name='productDescription'

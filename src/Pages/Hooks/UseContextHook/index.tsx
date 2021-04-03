@@ -1,7 +1,13 @@
+import { ProductCart } from './components/ProductCart';
+import { ProductForm } from './components/ProductForm';
+
+import { ProductsProvider } from './contexts/ProductsContext';
+
 export const UseContextHook = () => {
   return (
-    <div>
-      <h1>Context Hook</h1>
-    </div>
+    <ProductsProvider>
+      <ProductForm />
+      <ProductCart />
+    </ProductsProvider>
   );
 };
