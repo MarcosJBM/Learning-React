@@ -9,7 +9,7 @@ import Hooks from './pages/Hooks';
 
 import { ComponentsAndProps } from './pages/MainConcepts/ComponentsAndProps';
 import { Forms } from './pages/MainConcepts/Forms';
-import RaisingTheState from './pages/MainConcepts/RaisingTheState';
+import { RaisingTheState } from './pages/MainConcepts/RaisingTheState';
 
 import { JSXInDepth } from './pages/AdvancedConcepts/JSXinDepth';
 import { Portals } from './pages/AdvancedConcepts/Portals';
