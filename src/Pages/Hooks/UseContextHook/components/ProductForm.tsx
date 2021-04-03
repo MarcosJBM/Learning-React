@@ -2,6 +2,8 @@ import { useContext } from 'react';
 
 import { ProductsContext } from '../contexts/ProductsContext';
 
+import { Form, Button } from '../styles/ProductForm';
+
 export const ProductForm = () => {
   const {
     productName,
@@ -13,7 +15,7 @@ export const ProductForm = () => {
   } = useContext(ProductsContext);
 
   return (
-    <form onSubmit={productFormHandler}>
+    <Form onSubmit={productFormHandler}>
       <input type='text' value={productName} onChange={productNameHandler} />
       <textarea
         name='productDescription'
@@ -23,9 +25,9 @@ export const ProductForm = () => {
         value={productDescription}
         onChange={productDescriptionHandler}
       />
-      <button type='submit' onClick={addProduct}>
+      <Button type='submit' onClick={addProduct}>
         Adicionar
-      </button>
-    </form>
+      </Button>
+    </Form>
   );
 };
