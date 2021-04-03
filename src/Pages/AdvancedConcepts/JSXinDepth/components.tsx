@@ -1,10 +1,7 @@
-import React from "react";
+import { AvatarProps } from './types';
 
-import { AvatarProps } from "./type";
-
-// Usando Dot Notation Para Tipos JSX
 export const UserProfile = {
-  AvatarImage: function AvatarImage({ avatar }: AvatarProps) {
+  AvatarImage: ({ avatar }: AvatarProps) => {
     return (
       <img
         src={avatar.image}
@@ -14,10 +11,10 @@ export const UserProfile = {
       />
     );
   },
-  UserName: function UserName(props: { name: string }) {
+  UserName: (props: { name: string }) => {
     return <h1>{props.name}</h1>;
   },
-  UserDescription: function UserDescription(props: { description: string }) {
+  UserDescription: (props: { description: string }) => {
     return <p>{props.description}</p>;
   },
 };

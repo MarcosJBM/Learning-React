@@ -1,14 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import { Container } from "./styles";
+import { Container } from './styles';
 
 const AdvancedGuides = () => {
   return (
     <Container>
-      <Link to={"/JSXInDepth"}>JSX In Depth</Link>
-      <Link to={"/Portals"}>Portals</Link>
-      <Link to={"/RenderProps"}>Render Props</Link>
+      <Link to={'/jsx-in-depth'}>JSX In Depth</Link>
+      <Link to={'/portals'}>Portals</Link>
+      <Link to={'/render-props'}>Render Props</Link>
     </Container>
   );
 };

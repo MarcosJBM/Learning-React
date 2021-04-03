@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { ModalProps } from "./type";
+import React, { useState } from 'react';
+import { ModalProps } from './type';
 
-import "./styles.css";
+import './styles.css';
 
 export const Dashboard = () => {
   const [show, setShow] = useState(false);
@@ -27,7 +27,7 @@ export const Dashboard = () => {
 };
 
 const Modal: React.FC<ModalProps> = ({ show, children, handleClose }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
+  const showHideClassName = show ? 'modal display-block' : 'modal display-none';
 
   return (
     <div className={showHideClassName}>
