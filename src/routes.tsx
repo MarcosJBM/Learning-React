@@ -3,11 +3,11 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import { Home } from './pages/Home';
 import Game from './pages/Tutorial';
-import MainConcepts from './pages/MainConcepts';
+import { MainConcepts } from './pages/MainConcepts';
 import { AdvancedGuides } from './pages/AdvancedConcepts';
 import Hooks from './pages/Hooks';
 
-import ComponentsAndProps from './pages/MainConcepts/ComponentsAndProps';
+import { ComponentsAndProps } from './pages/MainConcepts/ComponentsAndProps';
 import StateAndLifeCycle from './pages/MainConcepts/StateAndLifeCycle';
 import Forms from './pages/MainConcepts/Forms';
 import RaisingTheState from './pages/MainConcepts/RaisingTheState';

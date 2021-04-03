@@ -1,30 +1,26 @@
-import React from "react";
+import { formatDate } from './functions';
 
-import { formatDate } from "./functions";
-
-import { CommentProps, AvatarProps } from "./type";
+import { CommentProps, AvatarProps } from './types';
 
 const Avatar = ({ avatarURL, name }: AvatarProps) => {
-  return <img className='avatar' src={avatarURL} alt={name} />;
+  return <img src={avatarURL} alt={name} />;
 };
 
 const UserInfo = ({ avatarURL, name }: AvatarProps) => {
   return (
-    <div className='userInfo'>
+    <div>
       <Avatar avatarURL={avatarURL} name={name} />
-      <div className='userInfo-name'>{name}</div>
+      <div>{name}</div>
     </div>
   );
 };
 
-const Comment = ({ author, text, date }: CommentProps) => {
+export const Comment = ({ author, text, date }: CommentProps) => {
   return (
-    <div className='comment'>
+    <div>
       <UserInfo avatarURL={author.avatarURL} name={author.name} />
-      <div className='commentText'>{text}</div>
-      <div className='commentDate'>{formatDate(date)}</div>
+      <div>{text}</div>
+      <div>{formatDate(date)}</div>
     </div>
   );
 };
-
-export { Comment };

@@ -1,17 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import { Container } from "./styles";
+import { Container } from './styles';
 
-const MainConcepts = () => {
+export const MainConcepts = () => {
   return (
     <Container>
-      <Link to={"/ComponentsAndProps"}>Componentes e Props</Link>
-      <Link to={"/StateAndLifeCycle"}>State e Ciclo de Vida</Link>
-      <Link to={"/Forms"}>Formulários</Link>
-      <Link to={"/RaisingTheState"}>Elevando o State</Link>
+      <Link to={'/components-and-props'}>Componentes e Props</Link>
+      <Link to={'/state-and-life-cycle'}>State e Ciclo de Vida</Link>
+      <Link to={'/forms'}>Formulários</Link>
+      <Link to={'/raising-the-state'}>Elevando o State</Link>
     </Container>
   );
 };
-
-export default MainConcepts;

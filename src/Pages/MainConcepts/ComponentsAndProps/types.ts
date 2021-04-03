@@ -1,13 +1,13 @@
-export type CommentProps = {
+export interface CommentProps {
   author: {
     avatarURL: string;
     name: string;
   };
   text: string;
   date: Date;
-};
+}
 
-export type AvatarProps = {
+export interface AvatarProps {
   avatarURL: string;
   name: string;
-};
+}
