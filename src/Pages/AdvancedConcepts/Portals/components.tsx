@@ -1,40 +1,39 @@
-import React, { useState } from 'react';
-import { ModalProps } from './type';
+import { useState } from 'react';
 
-import './styles.css';
+import { ModalProps } from './types';
+
+import { Container, Section } from './styles';
 
 export const Dashboard = () => {
-  const [show, setShow] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  function showModal() {
-    setShow(true);
-  }
-
-  function hideModal() {
-    setShow(false);
-  }
+  const modalHandler = () => {
+    setIsModalOpen(isModalOpen => !isModalOpen);
+  };
 
   return (
-    <main>
-      <Modal show={show} handleClose={hideModal}>
-        <h3>Opa meu bom, aparentemente o Modal ta funcionando</h3>
+    <div>
+      <Modal showModal={isModalOpen} modalHandler={modalHandler}>
+        <h3>Modal funcionando, tente fecha-lo agora.</h3>
       </Modal>
-      <button type='button' onClick={showModal}>
-        Open
+      <button type='button' onClick={modalHandler}>
+        Abrir modal
       </button>
-    </main>
+    </div>
   );
 };
 
-const Modal: React.FC<ModalProps> = ({ show, children, handleClose }) => {
-  const showHideClassName = show ? 'modal display-block' : 'modal display-none';
+const Modal: React.FC<ModalProps> = ({ showModal, children, modalHandler }) => {
+  const displayClass = showModal ? 'open-modal' : 'closed-modal';
 
   return (
-    <div className={showHideClassName}>
-      <section className='modal-main'>
+    <Container className={displayClass}>
+      <Section>
         {children}
-        <button onClick={handleClose}>Close</button>
-      </section>
-    </div>
+        <button type='button' onClick={modalHandler}>
+          Fechar
+        </button>
+      </Section>
+    </Container>
   );
 };

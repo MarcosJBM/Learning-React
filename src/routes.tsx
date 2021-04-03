@@ -13,7 +13,7 @@ import Forms from './pages/MainConcepts/Forms';
 import RaisingTheState from './pages/MainConcepts/RaisingTheState';
 
 import { JSXInDepth } from './pages/AdvancedConcepts/JSXinDepth';
-import Portals from './pages/AdvancedConcepts/Portals';
+import { Portals } from './pages/AdvancedConcepts/Portals';
 import RenderProps from './pages/AdvancedConcepts/RenderProps';
 
 import UseStateHook from './pages/Hooks/UseStateHook';
